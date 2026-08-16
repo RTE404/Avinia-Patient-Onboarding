@@ -122,14 +122,34 @@ describe('GET /api/records/:patientId', () => {
     expect(res.body.record).toEqual(fixtureRecord);
   });
 
-  it('falls back to starting a live flow and returns LIVE_STARTED for a patient with no cache file', async () => {
+  it('returns 404 for an unknown patient_id even with consent granted', async () => {
+    // Fixed from the brief: the brief's version of this test granted consent
+    // for 'test-002' while querying 'test-999-uncached' — two different
+    // patientIds — so it always failed with 403 (consent-gating fires before
+    // the unknown-patient check) rather than exercising the 404 branch it
+    // documents. Consent must be granted for the *same* id being queried for
+    // this test to reach the patient-lookup code at all.
+    await request(createServer())
+      .post('/api/consent')
+      .send({ patientId: 'test-999-uncached', accepted: true });
+    vi.spyOn(flow, 'runFlow').mockImplementation(() => new Promise(() => {})); // never resolves in this test
+
+    const res = await request(createServer()).get('/api/records/test-999-uncached');
+
+    expect(res.status).toBe(404); // unknown patient_id takes precedence over the live-fetch fallback
+  });
+
+  it('falls back to starting a live flow and returns LIVE_STARTED for a known patient with no cache file', async () => {
+    // test-002 is a real sandbox patient but has no fixture written for it
+    // in this describe block (only test-001.json is written above), so this
+    // exercises the genuine cache-miss path end to end.
     await request(createServer()).post('/api/consent').send({ patientId: 'test-002', accepted: true });
     vi.spyOn(flow, 'runFlow').mockImplementation(() => new Promise(() => {})); // never resolves in this test
 
-    // Simulate a missing cache by pointing at a patient that Task 8's script
-    // never successfully cached in this test environment.
-    const res = await request(createServer()).get('/api/records/test-999-uncached');
+    const res = await request(createServer()).get('/api/records/test-002');
 
-    expect(res.status).toBe(404); // unknown patient_id takes precedence
+    expect(res.status).toBe(202);
+    expect(res.body.status).toBe('LIVE_STARTED');
+    expect(res.body.jobId).toEqual(expect.any(String));
   });
 });
