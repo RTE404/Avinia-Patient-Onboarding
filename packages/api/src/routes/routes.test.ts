@@ -1,11 +1,11 @@
-import { existsSync, mkdirSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import request from 'supertest';
 import type { NormalizedPatientRecord } from '@onboarding/shared';
 import * as patients from '../particle/patients.js';
 import * as flow from '../flow.js';
-import { resetConsentForTests } from '../consentStore.js';
+import { grantConsent, resetConsentForTests } from '../consentStore.js';
 import { createServer } from '../server.js';
 
 beforeEach(() => {
@@ -67,6 +67,30 @@ describe('consent gating', () => {
   });
 });
 
+describe('patientId validation (path-traversal hardening)', () => {
+  it('rejects consent for a patientId that is not a known sandbox patient', async () => {
+    const res = await request(createServer())
+      .post('/api/consent')
+      .send({ patientId: '../../package', accepted: true });
+
+    expect(res.status).toBe(404);
+  });
+
+  it('never reads a file outside the cache directory, even if consent was somehow granted', async () => {
+    // Defence in depth: bypass the consent route's own validation and force a
+    // traversal-style id into the consent store directly, so this asserts the
+    // record route's guard on its own rather than relying on the consent route.
+    grantConsent('../../package');
+
+    const res = await request(createServer()).get('/api/records/..%2F..%2Fpackage');
+
+    expect(res.status).toBe(404);
+    expect(res.body.record).toBeUndefined();
+    // packages/api/package.json is what the unfixed version served here.
+    expect(JSON.stringify(res.body)).not.toContain('@onboarding/api');
+  });
+});
+
 describe('GET /api/records/:patientId', () => {
   // Amendment (controller ruling): the brief's original version of this test
   // depended on a real cache file at src/cache/test-001.json produced by
@@ -76,20 +100,18 @@ describe('GET /api/records/:patientId', () => {
   // prerequisite, this test writes its own fixture cache file directly and
   // cleans it up afterward.
   //
-  // Fix (post-review): the fixture originally used 'test-001' — Elvira's
-  // real patient_id from sandbox-patients.ts. fetch-cached.ts's CACHED path
-  // only keys off the :patientId route param and never checks it against
-  // sandboxPatients, so any id that passes the consent check works equally
-  // well here. Using a real patient_id meant that once the user gets real
-  // Particle credentials and runs the Task 8 prefetch script for real, this
-  // test would overwrite the genuine cached record in beforeEach and then
-  // permanently delete it in afterEach on every test run — a forward-looking
-  // data-loss bug. Using an id that can never collide with a real
-  // sandboxPatients entry (none of which match this pattern) sidesteps the
-  // problem entirely instead of requiring stash/restore logic.
+  // Fix (final review, finding 1): this fixture previously used a synthetic id
+  // that is deliberately absent from sandboxPatients, to avoid clobbering a
+  // real prefetched cache file. That is no longer possible — the route now
+  // resolves :patientId against sandboxPatients *before* reading any file, so
+  // an id that isn't a real sandbox patient 404s and never reaches the cache
+  // at all. The fixture therefore has to use a genuine patient_id, and the
+  // data-loss concern is handled by stashing and restoring any pre-existing
+  // cache file around each test instead.
   const CACHE_DIR = join(process.cwd(), 'src/cache');
-  const FIXTURE_PATIENT_ID = 'test-fixture-only-not-a-real-sandbox-patient';
+  const FIXTURE_PATIENT_ID = 'test-001';
   const fixturePath = join(CACHE_DIR, `${FIXTURE_PATIENT_ID}.json`);
+  let stashedCacheFile: string | null = null;
   const fixtureRecord: NormalizedPatientRecord = {
     patientId: 'ppid-fixture-001',
     sourceFormat: 'FHIR',
@@ -113,10 +135,17 @@ describe('GET /api/records/:patientId', () => {
     if (!existsSync(CACHE_DIR)) {
       mkdirSync(CACHE_DIR, { recursive: true });
     }
+    stashedCacheFile = existsSync(fixturePath) ? readFileSync(fixturePath, 'utf-8') : null;
     writeFileSync(fixturePath, JSON.stringify(fixtureRecord), 'utf-8');
   });
 
   afterEach(() => {
+    if (stashedCacheFile !== null) {
+      // Put a genuine prefetched record back exactly as it was.
+      writeFileSync(fixturePath, stashedCacheFile, 'utf-8');
+      stashedCacheFile = null;
+      return;
+    }
     try {
       unlinkSync(fixturePath);
     } catch {
@@ -136,21 +165,24 @@ describe('GET /api/records/:patientId', () => {
     expect(res.body.record).toEqual(fixtureRecord);
   });
 
-  it('returns 404 for an unknown patient_id even with consent granted', async () => {
-    // Fixed from the brief: the brief's version of this test granted consent
-    // for 'test-002' while querying 'test-999-uncached' — two different
-    // patientIds — so it always failed with 403 (consent-gating fires before
-    // the unknown-patient check) rather than exercising the 404 branch it
-    // documents. Consent must be granted for the *same* id being queried for
-    // this test to reach the patient-lookup code at all.
-    await request(createServer())
+  it('returns 404 for an unknown patient_id', async () => {
+    // The unknown-patient check now runs before the consent check (see
+    // finding 1), so an id that isn't in sandboxPatients 404s whether or not
+    // consent was ever granted — and consent can no longer be granted for one
+    // anyway. This asserts the id never reaches the cache read or the
+    // live-fetch fallback.
+    const consentRes = await request(createServer())
       .post('/api/consent')
       .send({ patientId: 'test-999-uncached', accepted: true });
-    vi.spyOn(flow, 'runFlow').mockImplementation(() => new Promise(() => {})); // never resolves in this test
+    expect(consentRes.status).toBe(404);
+    const runFlowSpy = vi
+      .spyOn(flow, 'runFlow')
+      .mockImplementation(() => new Promise(() => {})); // never resolves in this test
 
     const res = await request(createServer()).get('/api/records/test-999-uncached');
 
     expect(res.status).toBe(404); // unknown patient_id takes precedence over the live-fetch fallback
+    expect(runFlowSpy).not.toHaveBeenCalled();
   });
 
   it('falls back to starting a live flow and returns LIVE_STARTED for a known patient with no cache file', async () => {

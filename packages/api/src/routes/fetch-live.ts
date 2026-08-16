@@ -10,14 +10,16 @@ export const fetchLiveRouter = Router();
 fetchLiveRouter.post('/api/records/:patientId/live/start', (req, res) => {
   const { patientId } = req.params;
 
-  if (!hasConsent(patientId)) {
-    res.status(403).json({ message: 'Consent has not been given for this patient' });
-    return;
-  }
-
+  // Same ordering as fetch-cached.ts: resolve the patient against the fixed
+  // sandbox list first so an unknown/hostile id can never reach anything else.
   const patient = sandboxPatients.find((p) => p.demographics.patient_id === patientId);
   if (!patient) {
     res.status(404).json({ message: `Unknown patient_id ${patientId}` });
+    return;
+  }
+
+  if (!hasConsent(patient.demographics.patient_id)) {
+    res.status(403).json({ message: 'Consent has not been given for this patient' });
     return;
   }
 

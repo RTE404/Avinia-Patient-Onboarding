@@ -13,21 +13,26 @@ const CACHE_DIR = join(process.cwd(), 'src/cache');
 fetchCachedRouter.get('/api/records/:patientId', (req, res) => {
   const { patientId } = req.params;
 
-  if (!hasConsent(patientId)) {
+  // Resolve the patient against the fixed sandbox list *before* touching the
+  // filesystem, and build the cache path from the matched patient's own id
+  // rather than the raw route param. Interpolating the param straight into a
+  // path let `GET /api/records/..%2F..%2Fpackage` read arbitrary files off
+  // disk (e.g. packages/api/package.json) and serve them as a patient record.
+  const patient = sandboxPatients.find((p) => p.demographics.patient_id === patientId);
+  if (!patient) {
+    res.status(404).json({ message: `Unknown patient_id ${patientId}` });
+    return;
+  }
+
+  if (!hasConsent(patient.demographics.patient_id)) {
     res.status(403).json({ message: 'Consent has not been given for this patient' });
     return;
   }
 
-  const cachePath = join(CACHE_DIR, `${patientId}.json`);
+  const cachePath = join(CACHE_DIR, `${patient.demographics.patient_id}.json`);
   if (existsSync(cachePath)) {
     const record = JSON.parse(readFileSync(cachePath, 'utf-8'));
     res.status(200).json({ status: 'CACHED', record });
-    return;
-  }
-
-  const patient = sandboxPatients.find((p) => p.demographics.patient_id === patientId);
-  if (!patient) {
-    res.status(404).json({ message: `Unknown patient_id ${patientId}` });
     return;
   }
 
