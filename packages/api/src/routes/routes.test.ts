@@ -1,5 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { tmpdir } from 'node:os';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import request from 'supertest';
 import type { NormalizedPatientRecord } from '@onboarding/shared';
@@ -147,7 +149,10 @@ describe('GET /api/records/:patientId', () => {
   // at all. The fixture therefore has to use a genuine patient_id, and the
   // data-loss concern is handled by stashing and restoring any pre-existing
   // cache file around each test instead.
-  const CACHE_DIR = join(process.cwd(), 'src/cache');
+  // Same import.meta.url-relative resolution the route and the prefetch
+  // script use, so this test can't accidentally pass by agreeing with a
+  // cwd-based path the production code no longer uses.
+  const CACHE_DIR = join(dirname(fileURLToPath(import.meta.url)), '../cache');
   const FIXTURE_PATIENT_ID = 'test-001';
   const fixturePath = join(CACHE_DIR, `${FIXTURE_PATIENT_ID}.json`);
   let stashedCacheFile: string | null = null;
@@ -202,6 +207,30 @@ describe('GET /api/records/:patientId', () => {
     expect(res.status).toBe(200);
     expect(res.body.status).toBe('CACHED');
     expect(res.body.record).toEqual(fixtureRecord);
+  });
+
+  it('finds the cache file no matter what directory the process was started from', async () => {
+    // The prefetch script writes the cache relative to its own file location,
+    // so the API has to resolve it the same way. When the API resolved it
+    // from process.cwd() instead, starting the server from anywhere but
+    // packages/api made every cache lookup silently miss.
+    const originalCwd = process.cwd();
+    try {
+      process.chdir(tmpdir());
+      vi.resetModules();
+      const [{ createServer: freshCreateServer }, { grantConsent: freshGrantConsent }] =
+        await Promise.all([import('../server.js'), import('../consentStore.js')]);
+      freshGrantConsent(FIXTURE_PATIENT_ID);
+
+      const res = await request(freshCreateServer()).get(`/api/records/${FIXTURE_PATIENT_ID}`);
+
+      expect(res.status).toBe(200);
+      expect(res.body.status).toBe('CACHED');
+      expect(res.body.record).toEqual(fixtureRecord);
+    } finally {
+      process.chdir(originalCwd);
+      vi.resetModules();
+    }
   });
 
   it('returns 404 for an unknown patient_id', async () => {

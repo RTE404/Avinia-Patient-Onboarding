@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { existsSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { sandboxPatients } from '@onboarding/shared';
 import { runFlow } from '../flow.js';
@@ -8,7 +9,13 @@ import { hasConsent } from '../consentStore.js';
 import { createJob, updateJob } from '../jobs.js';
 
 export const fetchCachedRouter = Router();
-const CACHE_DIR = join(process.cwd(), 'src/cache');
+
+// Resolved relative to this source file, not process.cwd(): the prefetch
+// script (packages/scripts/src/prefetch.ts) writes the cache using the same
+// import.meta.url-based scheme, and a cwd-based path only agreed with it when
+// the API happened to be started from packages/api. Started any other way,
+// every cache lookup silently missed and fell through to a slow live query.
+const CACHE_DIR = join(dirname(fileURLToPath(import.meta.url)), '../cache');
 
 fetchCachedRouter.get('/api/records/:patientId', (req, res) => {
   const { patientId } = req.params;
