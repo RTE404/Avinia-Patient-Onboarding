@@ -1,3 +1,4 @@
+import { StrictMode } from 'react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import * as apiClient from '../api-client.js';
@@ -65,5 +66,40 @@ describe('Results', () => {
     render(<Results patientId="test-002" />);
 
     await waitFor(() => expect(screen.getByText(/searching provider networks/i)).toBeInTheDocument());
+  });
+
+  it('ignores a stale response from an earlier (StrictMode-duplicate) effect run', async () => {
+    const staleRecord: NormalizedPatientRecord = {
+      ...populatedRecord,
+      demographics: { ...populatedRecord.demographics, givenName: 'Stale', familyName: 'Patient' },
+    };
+
+    let callCount = 0;
+    vi.spyOn(apiClient, 'fetchRecords').mockImplementation(() => {
+      callCount += 1;
+      // The first (StrictMode-duplicate, effectively orphaned) call resolves
+      // after the second — the classic out-of-order-response race a missing
+      // cancellation guard is vulnerable to.
+      if (callCount === 1) {
+        return new Promise((resolve) =>
+          setTimeout(() => resolve({ status: 'CACHED', record: staleRecord }), 30),
+        );
+      }
+      return Promise.resolve({ status: 'CACHED', record: populatedRecord });
+    });
+
+    render(
+      <StrictMode>
+        <Results patientId="test-007" />
+      </StrictMode>,
+    );
+
+    await waitFor(() => expect(screen.getByText('Hart Fallon')).toBeInTheDocument());
+
+    // Give the slower, stale first call time to resolve and confirm it
+    // didn't clobber the state the second (current) effect run already set.
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    expect(screen.getByText('Hart Fallon')).toBeInTheDocument();
+    expect(screen.queryByText('Stale Patient')).not.toBeInTheDocument();
   });
 });

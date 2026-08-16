@@ -9,15 +9,29 @@ export function Results({ patientId }: { patientId: string }) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Guard against a stale response clobbering fresher state: React
+    // StrictMode double-invokes effects in dev (mount, cleanup, re-mount),
+    // and on a cache miss every GET starts a brand-new live query on the
+    // backend, so an unguarded effect here would kick off two independent
+    // queries per page visit and let whichever response happens to arrive
+    // last win, even if it's the orphaned first one.
+    let cancelled = false;
     fetchRecords(patientId)
       .then((res) => {
+        if (cancelled) return;
         if (res.status === 'CACHED') {
           setRecord(res.record as NormalizedPatientRecord);
         } else {
           setJobId(res.jobId!);
         }
       })
-      .catch((e) => setError((e as Error).message));
+      .catch((e) => {
+        if (cancelled) return;
+        setError((e as Error).message);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [patientId]);
 
   if (error) {
