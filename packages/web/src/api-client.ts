@@ -1,6 +1,6 @@
 const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:4000';
 
-export async function submitDemographics(patientId: string): Promise<{ particlePatientId: string }> {
+export async function submitDemographics(patientId: string): Promise<{ patientId: string }> {
   const res = await fetch(`${API_BASE}/api/demographics`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

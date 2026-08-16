@@ -16,26 +16,22 @@ beforeEach(() => {
 });
 
 describe('POST /api/demographics', () => {
-  it('registers a known sandbox patient and returns particlePatientId', async () => {
-    vi.spyOn(patients, 'registerPatient').mockResolvedValue({
-      given_name: 'Hart',
-      family_name: 'Fallon',
-      gender: 'MALE',
-      date_of_birth: '1952-10-01',
-      address_lines: ['456 Elm Street'],
-      address_city: 'Sample City',
-      address_state: 'NY',
-      postal_code: '11206',
-      patient_id: 'test-007',
-      particle_patient_id: 'ppid-007',
-    });
+  it('accepts a known sandbox patient without registering it with Particle', async () => {
+    // The endpoint's only real job is confirming the patient is one of the
+    // fixed sandbox patients. It used to also call registerPatient, whose
+    // particlePatientId no consumer ever used — and runFlow registers again
+    // anyway, so every live-path patient was registered with Particle twice.
+    const registerSpy = vi
+      .spyOn(patients, 'registerPatient')
+      .mockRejectedValue(new Error('registerPatient must not be called from POST /api/demographics'));
 
     const res = await request(createServer())
       .post('/api/demographics')
       .send({ patientId: 'test-007' });
 
     expect(res.status).toBe(200);
-    expect(res.body.particlePatientId).toBe('ppid-007');
+    expect(res.body.patientId).toBe('test-007');
+    expect(registerSpy).not.toHaveBeenCalled();
   });
 
   it('returns 404 for an unknown patient_id', async () => {

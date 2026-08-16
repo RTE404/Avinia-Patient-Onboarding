@@ -9,7 +9,7 @@ beforeEach(() => {
 
 describe('Demographics', () => {
   it('renders all 8 sandbox patients and calls onSelected after successful registration', async () => {
-    vi.spyOn(apiClient, 'submitDemographics').mockResolvedValue({ particlePatientId: 'ppid-007' });
+    vi.spyOn(apiClient, 'submitDemographics').mockResolvedValue({ patientId: 'test-007' });
     const onSelected = vi.fn();
 
     render(<Demographics onSelected={onSelected} />);
@@ -23,11 +23,11 @@ describe('Demographics', () => {
   });
 
   it('shows an error message if registration fails', async () => {
-    vi.spyOn(apiClient, 'submitDemographics').mockRejectedValue(new Error('Failed to register: 502'));
+    vi.spyOn(apiClient, 'submitDemographics').mockRejectedValue(new Error('Failed to register: 404'));
 
     render(<Demographics onSelected={vi.fn()} />);
     fireEvent.click(screen.getByText(/Hart Fallon/));
 
-    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to register: 502'));
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to register: 404'));
   });
 });
