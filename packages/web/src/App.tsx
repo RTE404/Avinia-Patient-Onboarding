@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Demographics } from './pages/Demographics.js';
 import { IdentityVerification } from './pages/IdentityVerification.js';
 import { Consent } from './pages/Consent.js';
+import { Results } from './pages/Results.js';
 
 type Step = 'demographics' | 'idv' | 'consent' | 'results';
 
@@ -28,5 +29,9 @@ export function App() {
     return <Consent patientId={patientId} onConsented={() => setStep('results')} />;
   }
 
-  return <p>Patient {patientId} consented. Results view coming in the next task.</p>;
+  if (step === 'results' && patientId) {
+    return <Results patientId={patientId} />;
+  }
+
+  return null;
 }
