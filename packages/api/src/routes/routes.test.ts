@@ -74,16 +74,28 @@ describe('GET /api/records/:patientId', () => {
   // credentials. Those credentials aren't available yet, so src/cache/ is
   // currently empty in this environment. Rather than depend on that external
   // prerequisite, this test writes its own fixture cache file directly and
-  // cleans it up afterward — self-contained, and doesn't collide with a real
-  // cache file if one shows up later.
+  // cleans it up afterward.
+  //
+  // Fix (post-review): the fixture originally used 'test-001' — Elvira's
+  // real patient_id from sandbox-patients.ts. fetch-cached.ts's CACHED path
+  // only keys off the :patientId route param and never checks it against
+  // sandboxPatients, so any id that passes the consent check works equally
+  // well here. Using a real patient_id meant that once the user gets real
+  // Particle credentials and runs the Task 8 prefetch script for real, this
+  // test would overwrite the genuine cached record in beforeEach and then
+  // permanently delete it in afterEach on every test run — a forward-looking
+  // data-loss bug. Using an id that can never collide with a real
+  // sandboxPatients entry (none of which match this pattern) sidesteps the
+  // problem entirely instead of requiring stash/restore logic.
   const CACHE_DIR = join(process.cwd(), 'src/cache');
-  const fixturePath = join(CACHE_DIR, 'test-001.json');
+  const FIXTURE_PATIENT_ID = 'test-fixture-only-not-a-real-sandbox-patient';
+  const fixturePath = join(CACHE_DIR, `${FIXTURE_PATIENT_ID}.json`);
   const fixtureRecord: NormalizedPatientRecord = {
     patientId: 'ppid-fixture-001',
     sourceFormat: 'FHIR',
     demographics: {
-      givenName: 'Elvira',
-      familyName: 'Valadez-Nucleus',
+      givenName: 'Fixture',
+      familyName: 'Patient',
       gender: 'FEMALE',
       dateOfBirth: '1970-12-26',
     },
@@ -113,9 +125,11 @@ describe('GET /api/records/:patientId', () => {
   });
 
   it('returns CACHED status and the record when a cache file exists', async () => {
-    await request(createServer()).post('/api/consent').send({ patientId: 'test-001', accepted: true });
+    await request(createServer())
+      .post('/api/consent')
+      .send({ patientId: FIXTURE_PATIENT_ID, accepted: true });
 
-    const res = await request(createServer()).get('/api/records/test-001');
+    const res = await request(createServer()).get(`/api/records/${FIXTURE_PATIENT_ID}`);
 
     expect(res.status).toBe(200);
     expect(res.body.status).toBe('CACHED');
