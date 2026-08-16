@@ -24,7 +24,7 @@ fetchLiveRouter.post('/api/records/:patientId/live/start', (req, res) => {
   }
 
   const jobId = randomUUID();
-  createJob(jobId);
+  createJob(jobId, patient.demographics.patient_id);
   updateJob(jobId, { state: 'RUNNING' });
   runFlow(patient, { onProgress: (state) => updateJob(jobId, { particleState: state }) })
     .then((record) => updateJob(jobId, { state: 'COMPLETE', record }))
@@ -37,6 +37,13 @@ fetchLiveRouter.get('/api/records/live/:jobId/status', (req, res) => {
   const job = getJob(req.params.jobId);
   if (!job) {
     res.status(404).json({ message: 'Unknown job id' });
+    return;
+  }
+  // Once the job is COMPLETE this response carries the whole normalized
+  // record, so it needs the same consent gate as the record routes — holding
+  // a jobId must not be enough to read a patient's history.
+  if (!hasConsent(job.patientId)) {
+    res.status(403).json({ message: 'Consent has not been given for this patient' });
     return;
   }
   res.status(200).json(job);

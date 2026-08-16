@@ -91,6 +91,45 @@ describe('patientId validation (path-traversal hardening)', () => {
   });
 });
 
+describe('GET /api/records/live/:jobId/status', () => {
+  async function startJob(patientId: string): Promise<string> {
+    const app = createServer();
+    await request(app).post('/api/consent').send({ patientId, accepted: true });
+    vi.spyOn(flow, 'runFlow').mockImplementation(() => new Promise(() => {})); // never resolves
+    const res = await request(app).post(`/api/records/${patientId}/live/start`);
+    expect(res.status).toBe(202);
+    return res.body.jobId as string;
+  }
+
+  it('returns the job for a patient whose consent is on file', async () => {
+    const jobId = await startJob('test-002');
+
+    const res = await request(createServer()).get(`/api/records/live/${jobId}/status`);
+
+    expect(res.status).toBe(200);
+    expect(res.body.state).toBe('RUNNING');
+  });
+
+  it('returns 403 once consent for the job’s patient is no longer on file', async () => {
+    // The status response carries the full NormalizedPatientRecord once the
+    // job completes, so it has to be consent-gated exactly like the record
+    // routes are — a bare jobId must not be enough to read someone's history.
+    const jobId = await startJob('test-002');
+    resetConsentForTests();
+
+    const res = await request(createServer()).get(`/api/records/live/${jobId}/status`);
+
+    expect(res.status).toBe(403);
+    expect(res.body.record).toBeUndefined();
+  });
+
+  it('returns 404 for an unknown job id', async () => {
+    const res = await request(createServer()).get('/api/records/live/no-such-job/status');
+
+    expect(res.status).toBe(404);
+  });
+});
+
 describe('GET /api/records/:patientId', () => {
   // Amendment (controller ruling): the brief's original version of this test
   // depended on a real cache file at src/cache/test-001.json produced by

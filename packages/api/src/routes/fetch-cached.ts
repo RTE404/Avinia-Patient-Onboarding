@@ -40,7 +40,7 @@ fetchCachedRouter.get('/api/records/:patientId', (req, res) => {
   // fetch-live would, and hand the caller a jobId to poll — same contract
   // as /live/start, so the frontend doesn't need to know which path it hit.
   const jobId = randomUUID();
-  createJob(jobId);
+  createJob(jobId, patient.demographics.patient_id);
   updateJob(jobId, { state: 'RUNNING' });
   runFlow(patient, { onProgress: (state) => updateJob(jobId, { particleState: state }) })
     .then((record) => updateJob(jobId, { state: 'COMPLETE', record }))
