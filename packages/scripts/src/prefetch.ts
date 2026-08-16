@@ -6,6 +6,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 config({ path: join(__dirname, '../../../.env') });
 
+// Note: ES module imports are hoisted and linked before any top-level statement
+// runs, so the static imports below are actually loaded before config() executes
+// above, not after. This is safe today only because @onboarding/api's client.ts
+// reads PARTICLE_CLIENT_ID/PARTICLE_CLIENT_SECRET lazily inside getAccessToken(),
+// not at module scope. If that ever changes to a module-level read, switch these
+// to dynamic import() calls after config() to preserve real load-order.
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { sandboxPatients } from '@onboarding/shared';
 import { runFlow } from '@onboarding/api';
