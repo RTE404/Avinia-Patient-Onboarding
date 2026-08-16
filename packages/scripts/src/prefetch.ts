@@ -8,10 +8,13 @@ config({ path: join(__dirname, '../../../.env') });
 
 // Note: ES module imports are hoisted and linked before any top-level statement
 // runs, so the static imports below are actually loaded before config() executes
-// above, not after. This is safe today only because @onboarding/api's client.ts
-// reads PARTICLE_CLIENT_ID/PARTICLE_CLIENT_SECRET lazily inside getAccessToken(),
-// not at module scope. If that ever changes to a module-level read, switch these
-// to dynamic import() calls after config() to preserve real load-order.
+// above, not after. PARTICLE_CLIENT_ID/PARTICLE_CLIENT_SECRET are safe regardless,
+// since @onboarding/api's client.ts reads them lazily inside getAccessToken(), not
+// at module scope. PARTICLE_BASE_URL is the one exception: client.ts captures it
+// eagerly in a module-level const (`process.env.PARTICLE_BASE_URL ?? '...'`), so a
+// .env override of PARTICLE_BASE_URL would NOT take effect — it's already resolved
+// to the hardcoded default by the time config() runs. If that matters, switch
+// these to dynamic import() calls after config() to preserve real load-order.
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { sandboxPatients } from '@onboarding/shared';
 import { runFlow } from '@onboarding/api';
