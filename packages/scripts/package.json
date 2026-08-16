@@ -1,0 +1,16 @@
+{
+  "name": "@onboarding/scripts",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "prefetch": "tsx src/prefetch.ts"
+  },
+  "dependencies": {
+    "@onboarding/api": "*",
+    "@onboarding/shared": "*",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0"
+  }
+}
