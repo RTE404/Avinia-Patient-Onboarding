@@ -11,6 +11,7 @@ export function ProgressState({
   pollIntervalMs?: number;
 }) {
   const [status, setStatus] = useState<JobStatus | null>(null);
+  const [pollError, setPollError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -23,7 +24,18 @@ export function ProgressState({
     // ahead of clearInterval() and (in a slow-response or fast-fake-timer
     // scenario) issuing an extra poll after the job has already completed.
     async function tick() {
-      const job = await pollJob(jobId);
+      let job: JobStatus;
+      try {
+        job = await pollJob(jobId);
+      } catch (e) {
+        // pollJob throws on any non-ok response, and this loop only re-arms
+        // itself on the success path — so without this the first transient
+        // failure would stop polling forever while the UI kept claiming to be
+        // searching. Surface it instead of stalling silently.
+        if (cancelled) return;
+        setPollError((e as Error).message);
+        return;
+      }
       if (cancelled) return;
       setStatus(job);
       if (job.state === 'COMPLETE') {
@@ -43,6 +55,10 @@ export function ProgressState({
       clearTimeout(timer);
     };
   }, [jobId, pollIntervalMs, onComplete]);
+
+  if (pollError) {
+    return <p role="alert">{pollError}</p>;
+  }
 
   if (status?.state === 'ERROR') {
     return <p role="alert">{status.error}</p>;

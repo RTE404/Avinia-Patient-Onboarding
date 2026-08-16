@@ -25,6 +25,21 @@ describe('ProgressState', () => {
     await waitFor(() => expect(onComplete).toHaveBeenCalledWith(record));
   });
 
+  it('surfaces an alert when a poll request itself fails instead of silently stopping', async () => {
+    // pollJob throws on any non-ok response, and the self-rescheduling loop
+    // only re-arms on the success path — so an unhandled rejection used to
+    // stop polling forever while the UI still said "searching".
+    vi.spyOn(apiClient, 'pollJob').mockRejectedValue(new Error('Failed to poll job: 503'));
+
+    render(<ProgressState jobId="job-3" onComplete={vi.fn()} pollIntervalMs={10} />);
+
+    await vi.advanceTimersByTimeAsync(30);
+
+    await waitFor(() =>
+      expect(screen.getByRole('alert')).toHaveTextContent('Failed to poll job: 503'),
+    );
+  });
+
   it('shows an error state if the job ends in ERROR', async () => {
     vi.spyOn(apiClient, 'pollJob').mockResolvedValue({
       id: 'job-2',
