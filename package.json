@@ -1,0 +1,17 @@
+{
+  "name": "patient-onboarding-demo",
+  "private": true,
+  "workspaces": [
+    "packages/shared",
+    "packages/api",
+    "packages/scripts",
+    "packages/web"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "prefetch": "npm run prefetch --workspace packages/scripts"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
