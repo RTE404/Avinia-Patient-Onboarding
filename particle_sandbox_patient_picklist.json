@@ -1,0 +1,2750 @@
+{
+  "confirmed": [
+    {
+      "tier": "CONFIRMED (explicit API instructions in docs)",
+      "name": "Elvira Valadez-Nucleus",
+      "product_tier": "Signal & Workbench Gold",
+      "formats_available": "FLAT & CCDA",
+      "snapshot_templates": "Patient History, Discharge Summary, Specialty Summary",
+      "registration_payload": {
+        "family_name": "Valadez-Nucleus",
+        "given_name": "Elvira",
+        "gender": "FEMALE",
+        "date_of_birth": "1970-12-26",
+        "address_lines": [
+          "703 Ankunding Trail Unit 45"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02215",
+        "patient_id": "test-001"
+      }
+    },
+    {
+      "tier": "CONFIRMED (explicit API instructions in docs)",
+      "name": "Glynda Sugarman-Nucleus",
+      "product_tier": "Workbench Gold",
+      "formats_available": "FLAT & CCDA",
+      "snapshot_templates": "Patient History",
+      "registration_payload": {
+        "family_name": "Sugarman-Nucleus",
+        "given_name": "Glynda",
+        "gender": "FEMALE",
+        "date_of_birth": "1968-01-01",
+        "address_lines": [
+          "123 Test Street"
+        ],
+        "address_city": "Anytown",
+        "address_state": "NY",
+        "postal_code": "11222",
+        "patient_id": "test-002"
+      }
+    },
+    {
+      "tier": "CONFIRMED (explicit API instructions in docs)",
+      "name": "Freda Quently-Nucleus",
+      "product_tier": "Workbench Gold",
+      "formats_available": "FLAT & CCDA",
+      "snapshot_templates": "Patient History",
+      "registration_payload": {
+        "family_name": "Quently-Nucleus",
+        "given_name": "Freda",
+        "gender": "FEMALE",
+        "date_of_birth": "1994-03-22",
+        "address_lines": [
+          "123 Main Street"
+        ],
+        "address_city": "Anytown",
+        "address_state": "NY",
+        "postal_code": "11206",
+        "patient_id": "test-003"
+      }
+    },
+    {
+      "tier": "CONFIRMED (explicit API instructions in docs)",
+      "name": "Kam Quark-Nucleus",
+      "product_tier": "Workbench Gold",
+      "formats_available": "FLAT & CCDA",
+      "snapshot_templates": "Patient History",
+      "registration_payload": {
+        "family_name": "Quark-Nucleus",
+        "given_name": "Kam",
+        "gender": "MALE",
+        "date_of_birth": "1954-12-01",
+        "address_lines": [
+          "999 Dev Drive"
+        ],
+        "address_city": "Brooklyn",
+        "address_state": "NY",
+        "postal_code": "11111",
+        "patient_id": "test-004"
+      }
+    },
+    {
+      "tier": "CONFIRMED (explicit API instructions in docs)",
+      "name": "Artie Jointson-Nucleus",
+      "product_tier": "Workbench Gold",
+      "formats_available": "FLAT & CCDA",
+      "snapshot_templates": "Patient History",
+      "registration_payload": {
+        "family_name": "Jointson-Nucleus",
+        "given_name": "Artie",
+        "gender": "MALE",
+        "date_of_birth": "1951-08-15",
+        "address_lines": [
+          "123 Art St"
+        ],
+        "address_city": "Anytown",
+        "address_state": "NY",
+        "postal_code": "11222",
+        "patient_id": "test-005"
+      }
+    },
+    {
+      "tier": "CONFIRMED (explicit API instructions in docs)",
+      "name": "Hart Fallon",
+      "product_tier": "Workbench Bronze",
+      "formats_available": "FHIR® & CCDA",
+      "snapshot_templates": "N/A",
+      "registration_payload": {
+        "family_name": "Fallon",
+        "given_name": "Hart",
+        "gender": "MALE",
+        "date_of_birth": "1952-10-01",
+        "address_lines": [
+          "456 Elm Street"
+        ],
+        "address_city": "Sample City",
+        "address_state": "NY",
+        "postal_code": "11206",
+        "patient_id": "test-007"
+      }
+    },
+    {
+      "tier": "CONFIRMED (explicit API instructions in docs)",
+      "name": "Tuma Nephro",
+      "product_tier": "Workbench Bronze",
+      "formats_available": "FHIR® & CCDA",
+      "snapshot_templates": "N/A",
+      "registration_payload": {
+        "family_name": "Nephro",
+        "given_name": "Tuma",
+        "gender": "FEMALE",
+        "date_of_birth": "1959-04-05",
+        "address_lines": [
+          "789 Dev Street"
+        ],
+        "address_city": "Sample City",
+        "address_state": "NY",
+        "postal_code": "11211",
+        "patient_id": "test-012"
+      }
+    },
+    {
+      "tier": "CONFIRMED (explicit API instructions in docs)",
+      "name": "Grant Bogisich",
+      "product_tier": "Workbench Bronze",
+      "formats_available": "FHIR® & CCDA",
+      "snapshot_templates": "N/A",
+      "registration_payload": {
+        "family_name": "Bogisich",
+        "given_name": "Grant",
+        "gender": "MALE",
+        "date_of_birth": "1995-09-05",
+        "address_lines": [
+          "710 Batz Estate"
+        ],
+        "address_city": "Harwich",
+        "address_state": "MA",
+        "postal_code": "02645",
+        "patient_id": "test-008"
+      }
+    }
+  ],
+  "unconfirmed_extended": [
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Aufderhar",
+        "given_name": "Federico",
+        "gender": "MALE",
+        "date_of_birth": "1981-07-12",
+        "address_lines": [
+          "237 Hegmann Avenue"
+        ],
+        "address_city": "Berkley",
+        "address_state": "MA",
+        "postal_code": "02779",
+        "patient_id": "sbx-covid-aufderhar-federico"
+      },
+      "documented_file_count": 7,
+      "approx_age": 40
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Bogisich",
+        "given_name": "Grant",
+        "gender": "MALE",
+        "date_of_birth": "1995-09-05",
+        "address_lines": [
+          "710 Batz Estate"
+        ],
+        "address_city": "Harwich",
+        "address_state": "MA",
+        "postal_code": "02645",
+        "patient_id": "sbx-covid-bogisich-grant"
+      },
+      "documented_file_count": 8,
+      "approx_age": 26
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Hartmann",
+        "given_name": "Rico",
+        "gender": "MALE",
+        "date_of_birth": "1972-03-17",
+        "address_lines": [
+          "436 Zboncak Orchard Apt 54"
+        ],
+        "address_city": "Revere",
+        "address_state": "MA",
+        "postal_code": "02151",
+        "patient_id": "sbx-covid-hartmann-rico"
+      },
+      "documented_file_count": 8,
+      "approx_age": 50
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Kulas",
+        "given_name": "Minh",
+        "gender": "MALE",
+        "date_of_birth": "1947-07-29",
+        "address_lines": [
+          "782 Hoppe Fork Unit 32"
+        ],
+        "address_city": "Waltham",
+        "address_state": "MA",
+        "postal_code": "02452",
+        "patient_id": "sbx-covid-kulas-minh"
+      },
+      "documented_file_count": 12,
+      "approx_age": 74
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Lindgren",
+        "given_name": "Mack",
+        "gender": "MALE",
+        "date_of_birth": "1958-07-02",
+        "address_lines": [
+          "172 Wisoky Heights"
+        ],
+        "address_city": "Auburn",
+        "address_state": "MA",
+        "postal_code": "01501",
+        "patient_id": "sbx-covid-lindgren-mack"
+      },
+      "documented_file_count": 8,
+      "approx_age": 63
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Metz",
+        "given_name": "Candyce",
+        "gender": "FEMALE",
+        "date_of_birth": "2019-07-16",
+        "address_lines": [
+          "440 Rohan Estate Suite 17"
+        ],
+        "address_city": "Concord",
+        "address_state": "MA",
+        "postal_code": "01742",
+        "patient_id": "sbx-covid-metz-candyce"
+      },
+      "documented_file_count": 6,
+      "approx_age": 2
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Moen",
+        "given_name": "Rose",
+        "gender": "FEMALE",
+        "date_of_birth": "1972-05-16",
+        "address_lines": [
+          "831 Douglas Arcade Apt 80"
+        ],
+        "address_city": "Rochester",
+        "address_state": "MA",
+        "postal_code": "02743",
+        "patient_id": "sbx-covid-moen-rose"
+      },
+      "documented_file_count": 8,
+      "approx_age": 49
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "OConner",
+        "given_name": "Anthony",
+        "gender": "MALE",
+        "date_of_birth": "1942-03-22",
+        "address_lines": [
+          "1085 Kub Wynd"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02136",
+        "patient_id": "sbx-covid-oconner-anthony"
+      },
+      "documented_file_count": 11,
+      "approx_age": 80
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Salazar",
+        "given_name": "Eloisa",
+        "gender": "FEMALE",
+        "date_of_birth": "1998-09-15",
+        "address_lines": [
+          "455 Boyer Crossing Unit 19"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02124",
+        "patient_id": "sbx-covid-salazar-eloisa"
+      },
+      "documented_file_count": 6,
+      "approx_age": 23
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Covid",
+      "registration_payload": {
+        "family_name": "Spinka",
+        "given_name": "Wilbert",
+        "gender": "MALE",
+        "date_of_birth": "2019-07-28",
+        "address_lines": [
+          "420 Schneider Grove"
+        ],
+        "address_city": "Beverly",
+        "address_state": "MA",
+        "postal_code": "01915",
+        "patient_id": "sbx-covid-spinka-wilbert"
+      },
+      "documented_file_count": 6,
+      "approx_age": 2
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Baeza",
+        "given_name": "Clara",
+        "gender": "FEMALE",
+        "date_of_birth": "1972-07-10",
+        "address_lines": [
+          "962 Roberts Glen"
+        ],
+        "address_city": "Monson",
+        "address_state": "MA",
+        "postal_code": "01057",
+        "patient_id": "sbx-diabetes-baeza-clara"
+      },
+      "documented_file_count": 8,
+      "approx_age": 49
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Bruen",
+        "given_name": "Tony",
+        "gender": "MALE",
+        "date_of_birth": "1974-06-13",
+        "address_lines": [
+          "646 Frami Meadow"
+        ],
+        "address_city": "Lowell",
+        "address_state": "MA",
+        "postal_code": "01850",
+        "patient_id": "sbx-diabetes-bruen-tony"
+      },
+      "documented_file_count": 7,
+      "approx_age": 47
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Hansen",
+        "given_name": "Terisa",
+        "gender": "FEMALE",
+        "date_of_birth": "1975-04-10",
+        "address_lines": [
+          "251 Balistreri Flat Apt 80"
+        ],
+        "address_city": "Berlin",
+        "address_state": "MA",
+        "postal_code": "01532",
+        "patient_id": "sbx-diabetes-hansen-terisa"
+      },
+      "documented_file_count": 13,
+      "approx_age": 47
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Kunde",
+        "given_name": "Rutha",
+        "gender": "FEMALE",
+        "date_of_birth": "1980-02-14",
+        "address_lines": [
+          "156 Dach Trafficway"
+        ],
+        "address_city": "Quincy",
+        "address_state": "MA",
+        "postal_code": "02184",
+        "patient_id": "sbx-diabetes-kunde-rutha"
+      },
+      "documented_file_count": 16,
+      "approx_age": 42
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Lueilwitz",
+        "given_name": "Rebeca",
+        "gender": "FEMALE",
+        "date_of_birth": "1971-06-07",
+        "address_lines": [
+          "712 Borer Forge"
+        ],
+        "address_city": "Acton",
+        "address_state": "MA",
+        "postal_code": "01460",
+        "patient_id": "sbx-diabetes-lueilwitz-rebeca"
+      },
+      "documented_file_count": 10,
+      "approx_age": 50
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Mills",
+        "given_name": "Boyd",
+        "gender": "MALE",
+        "date_of_birth": "1969-08-29",
+        "address_lines": [
+          "553 Doyle Green Suite 94"
+        ],
+        "address_city": "Plymouth",
+        "address_state": "MA",
+        "postal_code": "02360",
+        "patient_id": "sbx-diabetes-mills-boyd"
+      },
+      "documented_file_count": 10,
+      "approx_age": 52
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Purdy",
+        "given_name": "Jamar",
+        "gender": "MALE",
+        "date_of_birth": "1958-10-03",
+        "address_lines": [
+          "267 Crona Fork Unit 88"
+        ],
+        "address_city": "Athol",
+        "address_state": "MA",
+        "postal_code": "01331",
+        "patient_id": "sbx-diabetes-purdy-jamar"
+      },
+      "documented_file_count": 13,
+      "approx_age": 63
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Schneider",
+        "given_name": "Demetrice",
+        "gender": "FEMALE",
+        "date_of_birth": "1968-07-16",
+        "address_lines": [
+          "104 Conn Annex"
+        ],
+        "address_city": "Lynn",
+        "address_state": "MA",
+        "postal_code": "01901",
+        "patient_id": "sbx-diabetes-schneider-demetrice"
+      },
+      "documented_file_count": 13,
+      "approx_age": 53
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Tromp",
+        "given_name": "Buck",
+        "gender": "MALE",
+        "date_of_birth": "1963-05-23",
+        "address_lines": [
+          "840 Reichel Ranch Suite 22"
+        ],
+        "address_city": "Scituate",
+        "address_state": "MA",
+        "postal_code": "02066",
+        "patient_id": "sbx-diabetes-tromp-buck"
+      },
+      "documented_file_count": 9,
+      "approx_age": 58
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Diabetes",
+      "registration_payload": {
+        "family_name": "Valadez",
+        "given_name": "Elvira",
+        "gender": "FEMALE",
+        "date_of_birth": "1970-12-26",
+        "address_lines": [
+          "703 Ankunding Trail Unit 45"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02215",
+        "patient_id": "sbx-diabetes-valadez-elvira"
+      },
+      "documented_file_count": 19,
+      "approx_age": 51
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Beahan",
+        "given_name": "Roscoe",
+        "gender": "MALE",
+        "date_of_birth": "1971-08-09",
+        "address_lines": [
+          "431 Sporer Grove Suite 3"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02215",
+        "patient_id": "sbx-lung-cancer-beahan-roscoe"
+      },
+      "documented_file_count": 10,
+      "approx_age": 50
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Bradtke",
+        "given_name": "Chery",
+        "gender": "FEMALE",
+        "date_of_birth": "1970-12-14",
+        "address_lines": [
+          "999 Rosenbaum Brook"
+        ],
+        "address_city": "Quincy",
+        "address_state": "MA",
+        "postal_code": "02169",
+        "patient_id": "sbx-lung-cancer-bradtke-chery"
+      },
+      "documented_file_count": 7,
+      "approx_age": 51
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Klein",
+        "given_name": "Quinton",
+        "gender": "MALE",
+        "date_of_birth": "1967-10-20",
+        "address_lines": [
+          "629 Schuster Common"
+        ],
+        "address_city": "Amesbury",
+        "address_state": "MA",
+        "postal_code": "01913",
+        "patient_id": "sbx-lung-cancer-klein-quinton"
+      },
+      "documented_file_count": 7,
+      "approx_age": 54
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Kreiger",
+        "given_name": "Alan",
+        "gender": "MALE",
+        "date_of_birth": "1969-10-28",
+        "address_lines": [
+          "663 Dickinson Light"
+        ],
+        "address_city": "Rowley",
+        "address_state": "MA",
+        "postal_code": "01969",
+        "patient_id": "sbx-lung-cancer-kreiger-alan"
+      },
+      "documented_file_count": 7,
+      "approx_age": 52
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Mann",
+        "given_name": "David",
+        "gender": "MALE",
+        "date_of_birth": "1967-06-05",
+        "address_lines": [
+          "491 Block Club"
+        ],
+        "address_city": "Hingham",
+        "address_state": "MA",
+        "postal_code": "02043",
+        "patient_id": "sbx-lung-cancer-mann-david"
+      },
+      "documented_file_count": 12,
+      "approx_age": 54
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Oberbrunner",
+        "given_name": "Teddy",
+        "gender": "MALE",
+        "date_of_birth": "1965-08-24",
+        "address_lines": [
+          "630 Stamm Route"
+        ],
+        "address_city": "Pembroke",
+        "address_state": "MA",
+        "postal_code": "02359",
+        "patient_id": "sbx-lung-cancer-oberbrunner-teddy"
+      },
+      "documented_file_count": 7,
+      "approx_age": 56
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Ondricka",
+        "given_name": "Lurline",
+        "gender": "FEMALE",
+        "date_of_birth": "1971-02-27",
+        "address_lines": [
+          "370 Koelpin Route Suite 34"
+        ],
+        "address_city": "Sutton",
+        "address_state": "MA",
+        "postal_code": "01516",
+        "patient_id": "sbx-lung-cancer-ondricka-lurline"
+      },
+      "documented_file_count": 13,
+      "approx_age": 51
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Predovic",
+        "given_name": "Boris",
+        "gender": "MALE",
+        "date_of_birth": "1966-08-28",
+        "address_lines": [
+          "717 Pfannerstill Fort Suite 23"
+        ],
+        "address_city": "Lawrence",
+        "address_state": "MA",
+        "postal_code": "01840",
+        "patient_id": "sbx-lung-cancer-predovic-boris"
+      },
+      "documented_file_count": 7,
+      "approx_age": 55
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Reichert",
+        "given_name": "Lou",
+        "gender": "MALE",
+        "date_of_birth": "1973-03-10",
+        "address_lines": [
+          "149 Wolf Dam Suite 92"
+        ],
+        "address_city": "Gardner",
+        "address_state": "MA",
+        "postal_code": "01440",
+        "patient_id": "sbx-lung-cancer-reichert-lou"
+      },
+      "documented_file_count": 7,
+      "approx_age": 49
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Lung Cancer",
+      "registration_payload": {
+        "family_name": "Schmitt",
+        "given_name": "Emilia",
+        "gender": "FEMALE",
+        "date_of_birth": "1963-01-10",
+        "address_lines": [
+          "899 Lind Dale Unit 59"
+        ],
+        "address_city": "Chelsea",
+        "address_state": "MA",
+        "postal_code": "02149",
+        "patient_id": "sbx-lung-cancer-schmitt-emilia"
+      },
+      "documented_file_count": 10,
+      "approx_age": 59
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Arteaga",
+        "given_name": "Gerardo",
+        "gender": "MALE",
+        "date_of_birth": "1973-11-13",
+        "address_lines": [
+          "261 Koepp Fort Suite 74"
+        ],
+        "address_city": "Oxford",
+        "address_state": "MA",
+        "postal_code": "01540",
+        "patient_id": "sbx-random-condition-arteaga-gerardo"
+      },
+      "documented_file_count": 16,
+      "approx_age": 48
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Bartoletti",
+        "given_name": "Lacie",
+        "gender": "FEMALE",
+        "date_of_birth": "1961-06-20",
+        "address_lines": [
+          "342 Brekke Mission"
+        ],
+        "address_city": "Malden",
+        "address_state": "MA",
+        "postal_code": "02148",
+        "patient_id": "sbx-random-condition-bartoletti-lacie"
+      },
+      "documented_file_count": 8,
+      "approx_age": 60
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Barton",
+        "given_name": "Owen",
+        "gender": "MALE",
+        "date_of_birth": "2018-11-07",
+        "address_lines": [
+          "841 Lueilwitz Trafficway"
+        ],
+        "address_city": "Randolph",
+        "address_state": "MA",
+        "postal_code": "02368",
+        "patient_id": "sbx-random-condition-barton-owen"
+      },
+      "documented_file_count": 4,
+      "approx_age": 3
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Bauch",
+        "given_name": "Shannon",
+        "gender": "FEMALE",
+        "date_of_birth": "1919-05-08",
+        "address_lines": [
+          "376 Armstrong Common Suite 48"
+        ],
+        "address_city": "Haverhill",
+        "address_state": "MA",
+        "postal_code": "01832",
+        "patient_id": "sbx-random-condition-bauch-shannon"
+      },
+      "documented_file_count": 9,
+      "approx_age": 102
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Bednar",
+        "given_name": "Sena",
+        "gender": "FEMALE",
+        "date_of_birth": "1920-12-09",
+        "address_lines": [
+          "807 Larkin Divide Unit 34"
+        ],
+        "address_city": "Plymouth",
+        "address_state": "MA",
+        "postal_code": "02360",
+        "patient_id": "sbx-random-condition-bednar-sena"
+      },
+      "documented_file_count": 14,
+      "approx_age": 101
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Bergnaum",
+        "given_name": "Roman",
+        "gender": "MALE",
+        "date_of_birth": "1970-02-14",
+        "address_lines": [
+          "316 Nienow Fort"
+        ],
+        "address_city": "Littleton",
+        "address_state": "MA",
+        "postal_code": "01460",
+        "patient_id": "sbx-random-condition-bergnaum-roman"
+      },
+      "documented_file_count": 9,
+      "approx_age": 52
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Bernier",
+        "given_name": "Alysa",
+        "gender": "FEMALE",
+        "date_of_birth": "1974-12-18",
+        "address_lines": [
+          "708 Lynch Vale Unit 48"
+        ],
+        "address_city": "Everett",
+        "address_state": "MA",
+        "postal_code": "02149",
+        "patient_id": "sbx-random-condition-bernier-alysa"
+      },
+      "documented_file_count": 10,
+      "approx_age": 47
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Botsford",
+        "given_name": "Olen",
+        "gender": "MALE",
+        "date_of_birth": "2006-02-20",
+        "address_lines": [
+          "768 Heaney Extension"
+        ],
+        "address_city": "Southborough",
+        "address_state": "MA",
+        "postal_code": "01752",
+        "patient_id": "sbx-random-condition-botsford-olen"
+      },
+      "documented_file_count": 8,
+      "approx_age": 16
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Boyer",
+        "given_name": "Vicente",
+        "gender": "MALE",
+        "date_of_birth": "1964-06-19",
+        "address_lines": [
+          "107 Macejkovic Dam Unit 8"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "02145",
+        "patient_id": "sbx-random-condition-boyer-vicente"
+      },
+      "documented_file_count": 15,
+      "approx_age": 57
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Boyle",
+        "given_name": "Rozanne",
+        "gender": "FEMALE",
+        "date_of_birth": "1957-09-22",
+        "address_lines": [
+          "1092 Rippin Haven"
+        ],
+        "address_city": "Weymouth",
+        "address_state": "MA",
+        "postal_code": "02191",
+        "patient_id": "sbx-random-condition-boyle-rozanne"
+      },
+      "documented_file_count": 8,
+      "approx_age": 64
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Brekke",
+        "given_name": "Art",
+        "gender": "MALE",
+        "date_of_birth": "1970-08-06",
+        "address_lines": [
+          "652 Nolan Grove"
+        ],
+        "address_city": "Middleton",
+        "address_state": "MA",
+        "postal_code": "01983",
+        "patient_id": "sbx-random-condition-brekke-art"
+      },
+      "documented_file_count": 8,
+      "approx_age": 51
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Bruen",
+        "given_name": "Terrence",
+        "gender": "MALE",
+        "date_of_birth": "1984-01-12",
+        "address_lines": [
+          "111 Schmeler Rest Apt 60"
+        ],
+        "address_city": "Somerville",
+        "address_state": "MA",
+        "postal_code": "02143",
+        "patient_id": "sbx-random-condition-bruen-terrence"
+      },
+      "documented_file_count": 9,
+      "approx_age": 38
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Cartwright",
+        "given_name": "Bebe",
+        "gender": "FEMALE",
+        "date_of_birth": "1946-11-13",
+        "address_lines": [
+          "843 Ortiz Loaf Unit 98"
+        ],
+        "address_city": "Norfolk",
+        "address_state": "MA",
+        "postal_code": "02081",
+        "patient_id": "sbx-random-condition-cartwright-bebe"
+      },
+      "documented_file_count": 11,
+      "approx_age": 75
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Christiansen",
+        "given_name": "Lorene",
+        "gender": "FEMALE",
+        "date_of_birth": "1981-12-22",
+        "address_lines": [
+          "987 Schamberger Bay Suite 1"
+        ],
+        "address_city": "Newton",
+        "address_state": "MA",
+        "postal_code": "02465",
+        "patient_id": "sbx-random-condition-christiansen-lorene"
+      },
+      "documented_file_count": 9,
+      "approx_age": 40
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Considine",
+        "given_name": "Carlos",
+        "gender": "FEMALE",
+        "date_of_birth": "1988-12-05",
+        "address_lines": [
+          "368 Farrell Bridge Suite 22"
+        ],
+        "address_city": "Whitman",
+        "address_state": "MA",
+        "postal_code": "02370",
+        "patient_id": "sbx-random-condition-considine-carlos"
+      },
+      "documented_file_count": 10,
+      "approx_age": 33
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Corwin",
+        "given_name": "Casey",
+        "gender": "FEMALE",
+        "date_of_birth": "1941-08-19",
+        "address_lines": [
+          "883 Harber Ramp"
+        ],
+        "address_city": "Millbury",
+        "address_state": "MA",
+        "postal_code": "01527",
+        "patient_id": "sbx-random-condition-corwin-casey"
+      },
+      "documented_file_count": 15,
+      "approx_age": 80
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Corwin",
+        "given_name": "Arlean",
+        "gender": "FEMALE",
+        "date_of_birth": "1997-06-15",
+        "address_lines": [
+          "686 Marquardt Parade"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02122",
+        "patient_id": "sbx-random-condition-corwin-arlean"
+      },
+      "documented_file_count": 11,
+      "approx_age": 24
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Crist",
+        "given_name": "Waldo",
+        "gender": "MALE",
+        "date_of_birth": "2016-06-22",
+        "address_lines": [
+          "200 O'Hara Mission Suite 88"
+        ],
+        "address_city": "Montague",
+        "address_state": "MA",
+        "postal_code": "01351",
+        "patient_id": "sbx-random-condition-crist-waldo"
+      },
+      "documented_file_count": 8,
+      "approx_age": 5
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Crona",
+        "given_name": "Regan",
+        "gender": "FEMALE",
+        "date_of_birth": "2010-08-26",
+        "address_lines": [
+          "976 Murphy Skyway Apt 98"
+        ],
+        "address_city": "Newburyport",
+        "address_state": "MA",
+        "postal_code": "01938",
+        "patient_id": "sbx-random-condition-crona-regan"
+      },
+      "documented_file_count": 8,
+      "approx_age": 11
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Dietrich",
+        "given_name": "Valene",
+        "gender": "FEMALE",
+        "date_of_birth": "1993-02-12",
+        "address_lines": [
+          "173 Ondricka Heights Apt 7"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "02142",
+        "patient_id": "sbx-random-condition-dietrich-valene"
+      },
+      "documented_file_count": 16,
+      "approx_age": 29
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Donnelly",
+        "given_name": "Eugene",
+        "gender": "MALE",
+        "date_of_birth": "1985-09-27",
+        "address_lines": [
+          "930 Hammes Highlands Suite 87"
+        ],
+        "address_city": "West Boylston",
+        "address_state": "MA",
+        "postal_code": "01583",
+        "patient_id": "sbx-random-condition-donnelly-eugene"
+      },
+      "documented_file_count": 16,
+      "approx_age": 36
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Dooley",
+        "given_name": "Meryl",
+        "gender": "FEMALE",
+        "date_of_birth": "1945-01-13",
+        "address_lines": [
+          "864 Dickens Divide"
+        ],
+        "address_city": "Wakefield",
+        "address_state": "MA",
+        "postal_code": "01880",
+        "patient_id": "sbx-random-condition-dooley-meryl"
+      },
+      "documented_file_count": 11,
+      "approx_age": 77
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Dooley",
+        "given_name": "Deane",
+        "gender": "FEMALE",
+        "date_of_birth": "1977-06-15",
+        "address_lines": [
+          "190 Shields Course Suite 64"
+        ],
+        "address_city": "Springfield",
+        "address_state": "MA",
+        "postal_code": "01013",
+        "patient_id": "sbx-random-condition-dooley-deane"
+      },
+      "documented_file_count": 14,
+      "approx_age": 44
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Ebert",
+        "given_name": "Particia",
+        "gender": "FEMALE",
+        "date_of_birth": "1944-03-31",
+        "address_lines": [
+          "613 Kilback Ville"
+        ],
+        "address_city": "Bridgewater",
+        "address_state": "MA",
+        "postal_code": "02324",
+        "patient_id": "sbx-random-condition-ebert-particia"
+      },
+      "documented_file_count": 16,
+      "approx_age": 78
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Ebert",
+        "given_name": "Moira",
+        "gender": "FEMALE",
+        "date_of_birth": "1986-07-14",
+        "address_lines": [
+          "1063 Anderson Ferry Unit 31"
+        ],
+        "address_city": "Grafton",
+        "address_state": "MA",
+        "postal_code": "01536",
+        "patient_id": "sbx-random-condition-ebert-moira"
+      },
+      "documented_file_count": 9,
+      "approx_age": 35
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Emmerich",
+        "given_name": "Caren",
+        "gender": "FEMALE",
+        "date_of_birth": "1986-08-03",
+        "address_lines": [
+          "247 Weissnat Rapid Apt 69"
+        ],
+        "address_city": "Waltham",
+        "address_state": "MA",
+        "postal_code": "02452",
+        "patient_id": "sbx-random-condition-emmerich-caren"
+      },
+      "documented_file_count": 8,
+      "approx_age": 35
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Ernser",
+        "given_name": "Santana",
+        "gender": "FEMALE",
+        "date_of_birth": "1979-09-29",
+        "address_lines": [
+          "926 Deckow Road"
+        ],
+        "address_city": "East Bridgewater",
+        "address_state": "MA",
+        "postal_code": "02351",
+        "patient_id": "sbx-random-condition-ernser-santana"
+      },
+      "documented_file_count": 13,
+      "approx_age": 42
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Fadel",
+        "given_name": "Layla",
+        "gender": "FEMALE",
+        "date_of_birth": "1967-03-17",
+        "address_lines": [
+          "143 Swift Ferry Suite 69"
+        ],
+        "address_city": "Southwick",
+        "address_state": "MA",
+        "postal_code": "01077",
+        "patient_id": "sbx-random-condition-fadel-layla"
+      },
+      "documented_file_count": 12,
+      "approx_age": 55
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Fahey",
+        "given_name": "Walter",
+        "gender": "MALE",
+        "date_of_birth": "1963-03-13",
+        "address_lines": [
+          "424 Towne Trail"
+        ],
+        "address_city": "Lawrence",
+        "address_state": "MA",
+        "postal_code": "01841",
+        "patient_id": "sbx-random-condition-fahey-walter"
+      },
+      "documented_file_count": 9,
+      "approx_age": 59
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Feeney",
+        "given_name": "Bridgett",
+        "gender": "FEMALE",
+        "date_of_birth": "2011-09-14",
+        "address_lines": [
+          "426 Keebler Lodge Suite 80"
+        ],
+        "address_city": "Worcester",
+        "address_state": "MA",
+        "postal_code": "01505",
+        "patient_id": "sbx-random-condition-feeney-bridgett"
+      },
+      "documented_file_count": 8,
+      "approx_age": 10
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Feeney",
+        "given_name": "Chance",
+        "gender": "MALE",
+        "date_of_birth": "1979-08-21",
+        "address_lines": [
+          "870 Bruen Viaduct Unit 18"
+        ],
+        "address_city": "Worcester",
+        "address_state": "MA",
+        "postal_code": "01583",
+        "patient_id": "sbx-random-condition-feeney-chance"
+      },
+      "documented_file_count": 13,
+      "approx_age": 42
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Feil",
+        "given_name": "Rachel",
+        "gender": "FEMALE",
+        "date_of_birth": "1981-01-19",
+        "address_lines": [
+          "953 Fritsch Parade"
+        ],
+        "address_city": "Milton",
+        "address_state": "MA",
+        "postal_code": "02187",
+        "patient_id": "sbx-random-condition-feil-rachel"
+      },
+      "documented_file_count": 8,
+      "approx_age": 41
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Fritsch",
+        "given_name": "Julian",
+        "gender": "MALE",
+        "date_of_birth": "1911-02-10",
+        "address_lines": [
+          "296 Koelpin Gate Suite 46"
+        ],
+        "address_city": "Brookline",
+        "address_state": "MA",
+        "postal_code": "02446",
+        "patient_id": "sbx-random-condition-fritsch-julian"
+      },
+      "documented_file_count": 14,
+      "approx_age": 111
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Garza",
+        "given_name": "Pilar",
+        "gender": "FEMALE",
+        "date_of_birth": "1938-03-30",
+        "address_lines": [
+          "169 Mayer Rapid"
+        ],
+        "address_city": "Haverhill",
+        "address_state": "MA",
+        "postal_code": "01835",
+        "patient_id": "sbx-random-condition-garza-pilar"
+      },
+      "documented_file_count": 9,
+      "approx_age": 84
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Gaylord",
+        "given_name": "Dierdre",
+        "gender": "FEMALE",
+        "date_of_birth": "1986-02-02",
+        "address_lines": [
+          "257 Harber Common"
+        ],
+        "address_city": "Framingham",
+        "address_state": "MA",
+        "postal_code": "01721",
+        "patient_id": "sbx-random-condition-gaylord-dierdre"
+      },
+      "documented_file_count": 9,
+      "approx_age": 36
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Gerhold",
+        "given_name": "Norris",
+        "gender": "MALE",
+        "date_of_birth": "1923-12-31",
+        "address_lines": [
+          "702 Tromp Camp"
+        ],
+        "address_city": "Attleboro",
+        "address_state": "MA",
+        "postal_code": "02861",
+        "patient_id": "sbx-random-condition-gerhold-norris"
+      },
+      "documented_file_count": 8,
+      "approx_age": 98
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Gorczany",
+        "given_name": "Carola",
+        "gender": "FEMALE",
+        "date_of_birth": "1978-07-02",
+        "address_lines": [
+          "860 Graham Ramp Unit 16"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "02139",
+        "patient_id": "sbx-random-condition-gorczany-carola"
+      },
+      "documented_file_count": 14,
+      "approx_age": 43
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Gorczany",
+        "given_name": "Joey",
+        "gender": "MALE",
+        "date_of_birth": "1965-05-28",
+        "address_lines": [
+          "520 Bergnaum Estate Unit 53"
+        ],
+        "address_city": "Sturbridge",
+        "address_state": "MA",
+        "postal_code": "01507",
+        "patient_id": "sbx-random-condition-gorczany-joey"
+      },
+      "documented_file_count": 8,
+      "approx_age": 56
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Hamill",
+        "given_name": "Lucio",
+        "gender": "MALE",
+        "date_of_birth": "1992-07-17",
+        "address_lines": [
+          "491 Rohan Corner Unit 10"
+        ],
+        "address_city": "Pittsfield",
+        "address_state": "MA",
+        "postal_code": "01201",
+        "patient_id": "sbx-random-condition-hamill-lucio"
+      },
+      "documented_file_count": 9,
+      "approx_age": 29
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Harber",
+        "given_name": "Beth",
+        "gender": "FEMALE",
+        "date_of_birth": "1999-10-05",
+        "address_lines": [
+          "920 Pfannerstill Course"
+        ],
+        "address_city": "Worcester",
+        "address_state": "MA",
+        "postal_code": "01583",
+        "patient_id": "sbx-random-condition-harber-beth"
+      },
+      "documented_file_count": 15,
+      "approx_age": 22
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Hayes",
+        "given_name": "Jesus",
+        "gender": "MALE",
+        "date_of_birth": "1973-01-28",
+        "address_lines": [
+          "620 Wiza Estate Unit 12"
+        ],
+        "address_city": "Haverhill",
+        "address_state": "MA",
+        "postal_code": "01830",
+        "patient_id": "sbx-random-condition-hayes-jesus"
+      },
+      "documented_file_count": 8,
+      "approx_age": 49
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Heaney",
+        "given_name": "Bryon",
+        "gender": "MALE",
+        "date_of_birth": "1954-01-05",
+        "address_lines": [
+          "813 Ruecker Lane"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02110",
+        "patient_id": "sbx-random-condition-heaney-bryon"
+      },
+      "documented_file_count": 11,
+      "approx_age": 68
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Heidenreich",
+        "given_name": "Justin",
+        "gender": "MALE",
+        "date_of_birth": "2016-07-21",
+        "address_lines": [
+          "543 Schumm Walk"
+        ],
+        "address_city": "Westborough",
+        "address_state": "MA",
+        "postal_code": "01581",
+        "patient_id": "sbx-random-condition-heidenreich-justin"
+      },
+      "documented_file_count": 8,
+      "approx_age": 5
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Heller",
+        "given_name": "Jude",
+        "gender": "MALE",
+        "date_of_birth": "1980-07-31",
+        "address_lines": [
+          "114 Murazik Drive Unit 58"
+        ],
+        "address_city": "Hopedale",
+        "address_state": "MA",
+        "postal_code": "01747",
+        "patient_id": "sbx-random-condition-heller-jude"
+      },
+      "documented_file_count": 9,
+      "approx_age": 41
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Heller",
+        "given_name": "Dennis",
+        "gender": "MALE",
+        "date_of_birth": "2018-06-22",
+        "address_lines": [
+          "1099 Kohler Junction"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02134",
+        "patient_id": "sbx-random-condition-heller-dennis"
+      },
+      "documented_file_count": 8,
+      "approx_age": 3
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Jacobson",
+        "given_name": "Burl",
+        "gender": "MALE",
+        "date_of_birth": "1984-02-16",
+        "address_lines": [
+          "813 Kuhic Throughway Unit 27"
+        ],
+        "address_city": "Ipswich",
+        "address_state": "MA",
+        "postal_code": "01938",
+        "patient_id": "sbx-random-condition-jacobson-burl"
+      },
+      "documented_file_count": 8,
+      "approx_age": 38
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Kovacek",
+        "given_name": "Bernie",
+        "gender": "MALE",
+        "date_of_birth": "2019-08-13",
+        "address_lines": [
+          "352 Emmerich Trail"
+        ],
+        "address_city": "Dennis",
+        "address_state": "MA",
+        "postal_code": "02641",
+        "patient_id": "sbx-random-condition-kovacek-bernie"
+      },
+      "documented_file_count": 8,
+      "approx_age": 2
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Kuhlman",
+        "given_name": "Jarvis",
+        "gender": "MALE",
+        "date_of_birth": "1956-07-04",
+        "address_lines": [
+          "1020 Leannon Crossing"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02128",
+        "patient_id": "sbx-random-condition-kuhlman-jarvis"
+      },
+      "documented_file_count": 13,
+      "approx_age": 65
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Kuphal",
+        "given_name": "Mitch",
+        "gender": "MALE",
+        "date_of_birth": "1989-09-20",
+        "address_lines": [
+          "641 Runolfsdottir Skyway"
+        ],
+        "address_city": "Newton",
+        "address_state": "MA",
+        "postal_code": "02459",
+        "patient_id": "sbx-random-condition-kuphal-mitch"
+      },
+      "documented_file_count": 8,
+      "approx_age": 32
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Kuvalis",
+        "given_name": "Dorthy",
+        "gender": "FEMALE",
+        "date_of_birth": "1948-07-25",
+        "address_lines": [
+          "1063 Koch Trace Suite 62"
+        ],
+        "address_city": "Weymouth",
+        "address_state": "MA",
+        "postal_code": "02188",
+        "patient_id": "sbx-random-condition-kuvalis-dorthy"
+      },
+      "documented_file_count": 17,
+      "approx_age": 73
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Lakin",
+        "given_name": "Loren",
+        "gender": "MALE",
+        "date_of_birth": "2006-07-27",
+        "address_lines": [
+          "735 Bayer Station"
+        ],
+        "address_city": "Grafton",
+        "address_state": "MA",
+        "postal_code": "01536",
+        "patient_id": "sbx-random-condition-lakin-loren"
+      },
+      "documented_file_count": 11,
+      "approx_age": 15
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Lang",
+        "given_name": "Mathew",
+        "gender": "MALE",
+        "date_of_birth": "1999-08-27",
+        "address_lines": [
+          "685 Greenholt Esplanade"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02210",
+        "patient_id": "sbx-random-condition-lang-mathew"
+      },
+      "documented_file_count": 8,
+      "approx_age": 22
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Lebsack",
+        "given_name": "Renetta",
+        "gender": "FEMALE",
+        "date_of_birth": "1993-03-16",
+        "address_lines": [
+          "345 Tillman Lodge Apt 38"
+        ],
+        "address_city": "Lawrence",
+        "address_state": "MA",
+        "postal_code": "01840",
+        "patient_id": "sbx-random-condition-lebsack-renetta"
+      },
+      "documented_file_count": 8,
+      "approx_age": 29
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Lindgren",
+        "given_name": "Tempie",
+        "gender": "FEMALE",
+        "date_of_birth": "1979-09-27",
+        "address_lines": [
+          "830 McCullough Terrace"
+        ],
+        "address_city": "Wareham",
+        "address_state": "MA",
+        "postal_code": "02738",
+        "patient_id": "sbx-random-condition-lindgren-tempie"
+      },
+      "documented_file_count": 9,
+      "approx_age": 42
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Lynch",
+        "given_name": "Rena",
+        "gender": "FEMALE",
+        "date_of_birth": "2020-08-04",
+        "address_lines": [
+          "792 Zieme Extension Unit 72"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02113",
+        "patient_id": "sbx-random-condition-lynch-rena"
+      },
+      "documented_file_count": 4,
+      "approx_age": 1
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Marks",
+        "given_name": "Fernando",
+        "gender": "MALE",
+        "date_of_birth": "1990-08-25",
+        "address_lines": [
+          "368 Boyer Annex"
+        ],
+        "address_city": "Quincy",
+        "address_state": "MA",
+        "postal_code": "02170",
+        "patient_id": "sbx-random-condition-marks-fernando"
+      },
+      "documented_file_count": 11,
+      "approx_age": 31
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Marks",
+        "given_name": "Chantel",
+        "gender": "FEMALE",
+        "date_of_birth": "1954-01-17",
+        "address_lines": [
+          "486 Swift Mall Unit 19"
+        ],
+        "address_city": "Sudbury",
+        "address_state": "MA",
+        "postal_code": "01776",
+        "patient_id": "sbx-random-condition-marks-chantel"
+      },
+      "documented_file_count": 8,
+      "approx_age": 68
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "McGlynn",
+        "given_name": "Veta",
+        "gender": "FEMALE",
+        "date_of_birth": "1985-06-22",
+        "address_lines": [
+          "1033 Littel Parade Apt 36"
+        ],
+        "address_city": "Fall River",
+        "address_state": "MA",
+        "postal_code": "02720",
+        "patient_id": "sbx-random-condition-mcglynn-veta"
+      },
+      "documented_file_count": 14,
+      "approx_age": 36
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "McGlynn",
+        "given_name": "Justin",
+        "gender": "MALE",
+        "date_of_birth": "2004-03-07",
+        "address_lines": [
+          "246 Schulist Branch"
+        ],
+        "address_city": "Lowell",
+        "address_state": "MA",
+        "postal_code": "01850",
+        "patient_id": "sbx-random-condition-mcglynn-justin"
+      },
+      "documented_file_count": 8,
+      "approx_age": 18
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "McKenzie",
+        "given_name": "Lesley",
+        "gender": "MALE",
+        "date_of_birth": "1958-01-11",
+        "address_lines": [
+          "264 Beahan Byway"
+        ],
+        "address_city": "Bellingham",
+        "address_state": "MA",
+        "postal_code": "02019",
+        "patient_id": "sbx-random-condition-mckenzie-lesley"
+      },
+      "documented_file_count": 8,
+      "approx_age": 64
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Morar",
+        "given_name": "Goldie",
+        "gender": "FEMALE",
+        "date_of_birth": "1945-09-29",
+        "address_lines": [
+          "854 Stamm Vale Apt 63"
+        ],
+        "address_city": "Haverhill",
+        "address_state": "MA",
+        "postal_code": "01832",
+        "patient_id": "sbx-random-condition-morar-goldie"
+      },
+      "documented_file_count": 9,
+      "approx_age": 76
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Murazik",
+        "given_name": "Mario",
+        "gender": "FEMALE",
+        "date_of_birth": "1951-10-09",
+        "address_lines": [
+          "298 Parisian Road Unit 27"
+        ],
+        "address_city": "Reading",
+        "address_state": "MA",
+        "postal_code": "01801",
+        "patient_id": "sbx-random-condition-murazik-mario"
+      },
+      "documented_file_count": 8,
+      "approx_age": 70
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Murphy",
+        "given_name": "Darwin",
+        "gender": "MALE",
+        "date_of_birth": "1989-08-29",
+        "address_lines": [
+          "522 Paucek Trafficway Suite 21"
+        ],
+        "address_city": "Plymouth",
+        "address_state": "MA",
+        "postal_code": "02360",
+        "patient_id": "sbx-random-condition-murphy-darwin"
+      },
+      "documented_file_count": 14,
+      "approx_age": 32
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Nikolaus",
+        "given_name": "Lang",
+        "gender": "FEMALE",
+        "date_of_birth": "1948-04-16",
+        "address_lines": [
+          "532 Raynor Glen"
+        ],
+        "address_city": "Milton",
+        "address_state": "MA",
+        "postal_code": "02186",
+        "patient_id": "sbx-random-condition-nikolaus-lang"
+      },
+      "documented_file_count": 14,
+      "approx_age": 74
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Nitzsche",
+        "given_name": "Norris",
+        "gender": "MALE",
+        "date_of_birth": "1997-12-17",
+        "address_lines": [
+          "514 Steuber Crossroad"
+        ],
+        "address_city": "Natick",
+        "address_state": "MA",
+        "postal_code": "02481",
+        "patient_id": "sbx-random-condition-nitzsche-norris"
+      },
+      "documented_file_count": 8,
+      "approx_age": 24
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "OHara",
+        "given_name": "Chere",
+        "gender": "FEMALE",
+        "date_of_birth": "1988-12-05",
+        "address_lines": [
+          "695 Franecki Route"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02128",
+        "patient_id": "sbx-random-condition-ohara-chere"
+      },
+      "documented_file_count": 9,
+      "approx_age": 33
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Ortiz",
+        "given_name": "Danika",
+        "gender": "FEMALE",
+        "date_of_birth": "1957-12-09",
+        "address_lines": [
+          "324 Cassin Mill Apt 80"
+        ],
+        "address_city": "Gill",
+        "address_state": "MA",
+        "postal_code": "01376",
+        "patient_id": "sbx-random-condition-ortiz-danika"
+      },
+      "documented_file_count": 8,
+      "approx_age": 64
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Pacocha",
+        "given_name": "Emil",
+        "gender": "MALE",
+        "date_of_birth": "1971-11-28",
+        "address_lines": [
+          "1002 Cronin Drive"
+        ],
+        "address_city": "Hopkinton",
+        "address_state": "MA",
+        "postal_code": "01748",
+        "patient_id": "sbx-random-condition-pacocha-emil"
+      },
+      "documented_file_count": 11,
+      "approx_age": 50
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Paucek",
+        "given_name": "Charmain",
+        "gender": "FEMALE",
+        "date_of_birth": "1954-07-01",
+        "address_lines": [
+          "123 Carroll Mission"
+        ],
+        "address_city": "Cohasset",
+        "address_state": "MA",
+        "postal_code": "02025",
+        "patient_id": "sbx-random-condition-paucek-charmain"
+      },
+      "documented_file_count": 19,
+      "approx_age": 67
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Pfeffer",
+        "given_name": "Emory",
+        "gender": "MALE",
+        "date_of_birth": "1940-04-11",
+        "address_lines": [
+          "888 Krajcik Bridge Suite 81"
+        ],
+        "address_city": "Sudbury",
+        "address_state": "MA",
+        "postal_code": "01778",
+        "patient_id": "sbx-random-condition-pfeffer-emory"
+      },
+      "documented_file_count": 8,
+      "approx_age": 82
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Pollich",
+        "given_name": "Josh",
+        "gender": "MALE",
+        "date_of_birth": "1985-09-19",
+        "address_lines": [
+          "924 Homenick Hollow Apt 94"
+        ],
+        "address_city": "Worcester",
+        "address_state": "MA",
+        "postal_code": "01610",
+        "patient_id": "sbx-random-condition-pollich-josh"
+      },
+      "documented_file_count": 8,
+      "approx_age": 36
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Pollich",
+        "given_name": "Dean",
+        "gender": "MALE",
+        "date_of_birth": "1963-08-10",
+        "address_lines": [
+          "820 Hammes Trailer Apt 33"
+        ],
+        "address_city": "Arlington",
+        "address_state": "MA",
+        "postal_code": "02476",
+        "patient_id": "sbx-random-condition-pollich-dean"
+      },
+      "documented_file_count": 8,
+      "approx_age": 58
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Renner",
+        "given_name": "Roland",
+        "gender": "MALE",
+        "date_of_birth": "1978-05-12",
+        "address_lines": [
+          "632 Herman Wynd"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02114",
+        "patient_id": "sbx-random-condition-renner-roland"
+      },
+      "documented_file_count": 12,
+      "approx_age": 43
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Reynolds",
+        "given_name": "Cathey",
+        "gender": "FEMALE",
+        "date_of_birth": "2016-09-08",
+        "address_lines": [
+          "117 Davis Approach"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02115",
+        "patient_id": "sbx-random-condition-reynolds-cathey"
+      },
+      "documented_file_count": 8,
+      "approx_age": 5
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Rice",
+        "given_name": "Rima",
+        "gender": "FEMALE",
+        "date_of_birth": "1992-07-30",
+        "address_lines": [
+          "545 Bernhard Plaza Suite 14"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02130",
+        "patient_id": "sbx-random-condition-rice-rima"
+      },
+      "documented_file_count": 8,
+      "approx_age": 29
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Rogahn",
+        "given_name": "Lionel",
+        "gender": "MALE",
+        "date_of_birth": "2002-01-29",
+        "address_lines": [
+          "863 Pagac Divide Apt 0"
+        ],
+        "address_city": "Boston",
+        "address_state": "MA",
+        "postal_code": "02129",
+        "patient_id": "sbx-random-condition-rogahn-lionel"
+      },
+      "documented_file_count": 12,
+      "approx_age": 20
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Russel",
+        "given_name": "Rey",
+        "gender": "MALE",
+        "date_of_birth": "2000-12-22",
+        "address_lines": [
+          "662 Boehm Row Apt 60"
+        ],
+        "address_city": "Groveland",
+        "address_state": "MA",
+        "postal_code": "01834",
+        "patient_id": "sbx-random-condition-russel-rey"
+      },
+      "documented_file_count": 9,
+      "approx_age": 21
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Salcedo",
+        "given_name": "Rebeca",
+        "gender": "FEMALE",
+        "date_of_birth": "1957-03-28",
+        "address_lines": [
+          "228 Cummings Throughway"
+        ],
+        "address_city": "Revere",
+        "address_state": "MA",
+        "postal_code": "02152",
+        "patient_id": "sbx-random-condition-salcedo-rebeca"
+      },
+      "documented_file_count": 12,
+      "approx_age": 65
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Sanabria",
+        "given_name": "Diego",
+        "gender": "MALE",
+        "date_of_birth": "1957-07-25",
+        "address_lines": [
+          "1084 Fadel Skyway Apt 42"
+        ],
+        "address_city": "Norwood",
+        "address_state": "MA",
+        "postal_code": "02021",
+        "patient_id": "sbx-random-condition-sanabria-diego"
+      },
+      "documented_file_count": 9,
+      "approx_age": 64
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Sawayn",
+        "given_name": "David",
+        "gender": "MALE",
+        "date_of_birth": "1989-08-19",
+        "address_lines": [
+          "771 Paucek Station"
+        ],
+        "address_city": "Peabody",
+        "address_state": "MA",
+        "postal_code": "01940",
+        "patient_id": "sbx-random-condition-sawayn-david"
+      },
+      "documented_file_count": 9,
+      "approx_age": 32
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Schimmel",
+        "given_name": "Keenan",
+        "gender": "MALE",
+        "date_of_birth": "1945-12-24",
+        "address_lines": [
+          "496 Kuhic Dale"
+        ],
+        "address_city": "Arlington",
+        "address_state": "MA",
+        "postal_code": "02474",
+        "patient_id": "sbx-random-condition-schimmel-keenan"
+      },
+      "documented_file_count": 12,
+      "approx_age": 76
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Schmeler",
+        "given_name": "Alex",
+        "gender": "FEMALE",
+        "date_of_birth": "2020-08-16",
+        "address_lines": [
+          "737 Kub Meadow Apt 48"
+        ],
+        "address_city": "Hudson",
+        "address_state": "MA",
+        "postal_code": "01749",
+        "patient_id": "sbx-random-condition-schmeler-alex"
+      },
+      "documented_file_count": 4,
+      "approx_age": 1
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Schoen",
+        "given_name": "Evelina",
+        "gender": "FEMALE",
+        "date_of_birth": "1993-10-18",
+        "address_lines": [
+          "957 Kunde Meadow Suite 79"
+        ],
+        "address_city": "Revere",
+        "address_state": "MA",
+        "postal_code": "02151",
+        "patient_id": "sbx-random-condition-schoen-evelina"
+      },
+      "documented_file_count": 12,
+      "approx_age": 28
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Schultz",
+        "given_name": "Cindi",
+        "gender": "FEMALE",
+        "date_of_birth": "1976-02-20",
+        "address_lines": [
+          "829 Hagenes Ville Unit 7"
+        ],
+        "address_city": "Holyoke",
+        "address_state": "MA",
+        "postal_code": "01040",
+        "patient_id": "sbx-random-condition-schultz-cindi"
+      },
+      "documented_file_count": 11,
+      "approx_age": 46
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Senger",
+        "given_name": "Clark",
+        "gender": "MALE",
+        "date_of_birth": "1951-12-29",
+        "address_lines": [
+          "259 Hagenes Rue"
+        ],
+        "address_city": "Rehoboth",
+        "address_state": "MA",
+        "postal_code": "02771",
+        "patient_id": "sbx-random-condition-senger-clark"
+      },
+      "documented_file_count": 8,
+      "approx_age": 70
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Shanahan",
+        "given_name": "Alanna",
+        "gender": "FEMALE",
+        "date_of_birth": "1967-07-11",
+        "address_lines": [
+          "709 Walter Terrace"
+        ],
+        "address_city": "Worcester",
+        "address_state": "MA",
+        "postal_code": "01607",
+        "patient_id": "sbx-random-condition-shanahan-alanna"
+      },
+      "documented_file_count": 12,
+      "approx_age": 54
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Skiles",
+        "given_name": "Jesusita",
+        "gender": "FEMALE",
+        "date_of_birth": "1950-12-20",
+        "address_lines": [
+          "588 O'Reilly Haven"
+        ],
+        "address_city": "Bellingham",
+        "address_state": "MA",
+        "postal_code": "02019",
+        "patient_id": "sbx-random-condition-skiles-jesusita"
+      },
+      "documented_file_count": 9,
+      "approx_age": 71
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Spinka",
+        "given_name": "Loreen",
+        "gender": "FEMALE",
+        "date_of_birth": "1952-02-25",
+        "address_lines": [
+          "348 Powlowski Alley Apt 8"
+        ],
+        "address_city": "Springfield",
+        "address_state": "MA",
+        "postal_code": "01118",
+        "patient_id": "sbx-random-condition-spinka-loreen"
+      },
+      "documented_file_count": 15,
+      "approx_age": 70
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Stokes",
+        "given_name": "Vince",
+        "gender": "MALE",
+        "date_of_birth": "1956-07-19",
+        "address_lines": [
+          "185 Stracke Dale Apt 84"
+        ],
+        "address_city": "Pittsfield",
+        "address_state": "MA",
+        "postal_code": "01201",
+        "patient_id": "sbx-random-condition-stokes-vince"
+      },
+      "documented_file_count": 10,
+      "approx_age": 65
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Stroman",
+        "given_name": "Isreal",
+        "gender": "MALE",
+        "date_of_birth": "1979-10-02",
+        "address_lines": [
+          "995 Hoeger Track"
+        ],
+        "address_city": "Brookline",
+        "address_state": "MA",
+        "postal_code": "02467",
+        "patient_id": "sbx-random-condition-stroman-isreal"
+      },
+      "documented_file_count": 8,
+      "approx_age": 42
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Treutel",
+        "given_name": "Huey",
+        "gender": "MALE",
+        "date_of_birth": "2004-12-30",
+        "address_lines": [
+          "500 Zieme Underpass"
+        ],
+        "address_city": "Brockton",
+        "address_state": "MA",
+        "postal_code": "02351",
+        "patient_id": "sbx-random-condition-treutel-huey"
+      },
+      "documented_file_count": 8,
+      "approx_age": 17
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Turner",
+        "given_name": "Yasuko",
+        "gender": "FEMALE",
+        "date_of_birth": "1950-11-10",
+        "address_lines": [
+          "1023 West Light Suite 37"
+        ],
+        "address_city": "Millbury",
+        "address_state": "MA",
+        "postal_code": "01605",
+        "patient_id": "sbx-random-condition-turner-yasuko"
+      },
+      "documented_file_count": 16,
+      "approx_age": 71
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Turner",
+        "given_name": "Jerrod",
+        "gender": "MALE",
+        "date_of_birth": "1960-07-25",
+        "address_lines": [
+          "1024 Abbott Orchard"
+        ],
+        "address_city": "Woburn",
+        "address_state": "MA",
+        "postal_code": "01890",
+        "patient_id": "sbx-random-condition-turner-jerrod"
+      },
+      "documented_file_count": 10,
+      "approx_age": 61
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Valencia",
+        "given_name": "Jesús",
+        "gender": "MALE",
+        "date_of_birth": "2017-04-08",
+        "address_lines": [
+          "998 Halvorson Lane"
+        ],
+        "address_city": "Medway",
+        "address_state": "MA",
+        "postal_code": "02019",
+        "patient_id": "sbx-random-condition-valencia-jes-s"
+      },
+      "documented_file_count": 8,
+      "approx_age": 5
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Walter",
+        "given_name": "Caitlyn",
+        "gender": "FEMALE",
+        "date_of_birth": "1989-07-15",
+        "address_lines": [
+          "644 Powlowski Trafficway"
+        ],
+        "address_city": "Bernardston",
+        "address_state": "MA",
+        "postal_code": "01301",
+        "patient_id": "sbx-random-condition-walter-caitlyn"
+      },
+      "documented_file_count": 9,
+      "approx_age": 32
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Watsica",
+        "given_name": "Natacha",
+        "gender": "FEMALE",
+        "date_of_birth": "2010-02-24",
+        "address_lines": [
+          "659 Bahringer Dam Apt 38"
+        ],
+        "address_city": "Lynn",
+        "address_state": "MA",
+        "postal_code": "01901",
+        "patient_id": "sbx-random-condition-watsica-natacha"
+      },
+      "documented_file_count": 8,
+      "approx_age": 12
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Wisoky",
+        "given_name": "Carisa",
+        "gender": "FEMALE",
+        "date_of_birth": "1988-08-13",
+        "address_lines": [
+          "425 Sanford Rest"
+        ],
+        "address_city": "Lawrence",
+        "address_state": "MA",
+        "postal_code": "01843",
+        "patient_id": "sbx-random-condition-wisoky-carisa"
+      },
+      "documented_file_count": 9,
+      "approx_age": 33
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Wunsch",
+        "given_name": "Johnie",
+        "gender": "MALE",
+        "date_of_birth": "1973-11-23",
+        "address_lines": [
+          "838 Witting Highlands Unit 71"
+        ],
+        "address_city": "Worcester",
+        "address_state": "MA",
+        "postal_code": "01604",
+        "patient_id": "sbx-random-condition-wunsch-johnie"
+      },
+      "documented_file_count": 13,
+      "approx_age": 48
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Zemlak",
+        "given_name": "Bryce",
+        "gender": "MALE",
+        "date_of_birth": "1967-12-03",
+        "address_lines": [
+          "286 Leuschke Branch"
+        ],
+        "address_city": "Worcester",
+        "address_state": "MA",
+        "postal_code": "01606",
+        "patient_id": "sbx-random-condition-zemlak-bryce"
+      },
+      "documented_file_count": 13,
+      "approx_age": 54
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Random Condition",
+      "registration_payload": {
+        "family_name": "Zemlak",
+        "given_name": "Valentin",
+        "gender": "MALE",
+        "date_of_birth": "1992-08-10",
+        "address_lines": [
+          "661 Schoen Heights"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "01864",
+        "patient_id": "sbx-random-condition-zemlak-valentin"
+      },
+      "documented_file_count": 8,
+      "approx_age": 29
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Original Sandbox Data",
+      "registration_payload": {
+        "family_name": "Auer",
+        "given_name": "Denis",
+        "gender": "MALE",
+        "date_of_birth": "1971-02-16",
+        "address_lines": [
+          "123 Main St, Apt 4"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "01570",
+        "patient_id": "sbx-original-sandbox-data-auer-denis"
+      },
+      "documented_file_count": 1,
+      "approx_age": 51
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Original Sandbox Data",
+      "registration_payload": {
+        "family_name": "Kuhlman",
+        "given_name": "Layne",
+        "gender": "FEMALE",
+        "date_of_birth": "2015-05-29",
+        "address_lines": [
+          "123 Main St, Apt 4"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "01901",
+        "patient_id": "sbx-original-sandbox-data-kuhlman-layne"
+      },
+      "documented_file_count": 1,
+      "approx_age": 6
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Original Sandbox Data",
+      "registration_payload": {
+        "family_name": "Hermiston",
+        "given_name": "Ariel",
+        "gender": "MALE",
+        "date_of_birth": "1966-01-18",
+        "address_lines": [
+          "123 Main St, Apt 4"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "02138",
+        "patient_id": "sbx-original-sandbox-data-hermiston-ariel"
+      },
+      "documented_file_count": 1,
+      "approx_age": 56
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Original Sandbox Data",
+      "registration_payload": {
+        "family_name": "Hansen",
+        "given_name": "Rigoberto",
+        "gender": "MALE",
+        "date_of_birth": "1999-09-06",
+        "address_lines": [
+          "123 Main St, Apt 4"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "01035",
+        "patient_id": "sbx-original-sandbox-data-hansen-rigoberto"
+      },
+      "documented_file_count": 1,
+      "approx_age": 22
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Original Sandbox Data",
+      "registration_payload": {
+        "family_name": "Walter",
+        "given_name": "Gilda",
+        "gender": "FEMALE",
+        "date_of_birth": "2017-09-24",
+        "address_lines": [
+          "123 Main St, Apt 4"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "01540",
+        "patient_id": "sbx-original-sandbox-data-walter-gilda"
+      },
+      "documented_file_count": 1,
+      "approx_age": 4
+    },
+    {
+      "tier": "UNCONFIRMED (published demographics, live-API queryability not independently verified)",
+      "condition_category": "Original Sandbox Data",
+      "registration_payload": {
+        "family_name": "Collado",
+        "given_name": "Miguel Ángel",
+        "gender": "MALE",
+        "date_of_birth": "1979-01-23",
+        "address_lines": [
+          "123 Main St, Apt 4"
+        ],
+        "address_city": "Cambridge",
+        "address_state": "MA",
+        "postal_code": "02332",
+        "patient_id": "sbx-original-sandbox-data-collado-miguel-ngel"
+      },
+      "documented_file_count": 1,
+      "approx_age": 43
+    }
+  ]
+}
