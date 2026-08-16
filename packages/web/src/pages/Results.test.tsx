@@ -33,6 +33,8 @@ describe('Results', () => {
     expect(screen.getByText('Meredith Gray')).toBeInTheDocument();
     expect(screen.getByText('Type 2 diabetes')).toBeInTheDocument();
     expect(screen.getByText('Metformin')).toBeInTheDocument();
+    expect(screen.getByText(/Ambulatory — 2020-01-01/)).toBeInTheDocument();
+    expect(screen.getByText('Sample City Clinic')).toBeInTheDocument();
   });
 
   it('shows explicit "not available" states for sparse sections instead of hiding or erroring', async () => {
@@ -45,6 +47,7 @@ describe('Results', () => {
       immunizations: [],
       labResults: [],
       organizations: [],
+      encounters: [],
     };
     vi.spyOn(apiClient, 'fetchRecords').mockResolvedValue({ status: 'CACHED', record: sparseRecord });
 
@@ -57,6 +60,8 @@ describe('Results', () => {
     expect(screen.getByText(/No allergy information available/i)).toBeInTheDocument();
     expect(screen.getByText(/No immunization information available/i)).toBeInTheDocument();
     expect(screen.getByText(/No lab result information available/i)).toBeInTheDocument();
+    expect(screen.getByText(/No visit information available/i)).toBeInTheDocument();
+    expect(screen.getByText(/No care organization information available/i)).toBeInTheDocument();
   });
 
   it('shows ProgressState and does not crash when the backend returns LIVE_STARTED', async () => {

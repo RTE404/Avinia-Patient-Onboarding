@@ -73,6 +73,34 @@ export function Results({ patientId }: { patientId: string }) {
       </section>
 
       <section>
+        <h2>Encounters</h2>
+        {record.encounters.length === 0 ? (
+          <p>No visit information available.</p>
+        ) : (
+          <ul>
+            {record.encounters.map((e) => (
+              <li key={e.id}>
+                {e.typeName ?? 'Visit'} — {e.startTime ?? 'date unknown'}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section>
+        <h2>Organizations</h2>
+        {record.organizations.length === 0 ? (
+          <p>No care organization information available.</p>
+        ) : (
+          <ul>
+            {record.organizations.map((o) => (
+              <li key={o.id}>{o.name}</li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section>
         <h2>Conditions</h2>
         {record.conditions.length === 0 ? (
           <p>No condition information available.</p>
