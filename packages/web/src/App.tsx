@@ -1,12 +1,32 @@
 import { useState } from 'react';
 import { Demographics } from './pages/Demographics.js';
+import { IdentityVerification } from './pages/IdentityVerification.js';
+import { Consent } from './pages/Consent.js';
+
+type Step = 'demographics' | 'idv' | 'consent' | 'results';
 
 export function App() {
+  const [step, setStep] = useState<Step>('demographics');
   const [patientId, setPatientId] = useState<string | null>(null);
 
-  if (!patientId) {
-    return <Demographics onSelected={setPatientId} />;
+  if (step === 'demographics') {
+    return (
+      <Demographics
+        onSelected={(id) => {
+          setPatientId(id);
+          setStep('idv');
+        }}
+      />
+    );
   }
 
-  return <p>Patient {patientId} selected. Identity verification and consent steps coming in the next task.</p>;
+  if (step === 'idv') {
+    return <IdentityVerification onVerified={() => setStep('consent')} />;
+  }
+
+  if (step === 'consent' && patientId) {
+    return <Consent patientId={patientId} onConsented={() => setStep('results')} />;
+  }
+
+  return <p>Patient {patientId} consented. Results view coming in the next task.</p>;
 }
