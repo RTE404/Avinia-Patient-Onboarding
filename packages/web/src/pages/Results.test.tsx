@@ -17,8 +17,8 @@ const populatedRecord: NormalizedPatientRecord = {
   encounters: [{ id: 'e1', typeName: 'Ambulatory', startTime: '2020-01-01', endTime: null, providerId: 'p1' }],
   conditions: [{ id: 'c1', name: 'Type 2 diabetes', code: 'E11.9', clinicalStatus: 'active', onsetDate: '2018-01-01' }],
   medications: [{ id: 'm1', name: 'Metformin', code: null, status: 'active', doseValue: '500', doseUnit: 'mg', doseRoute: 'oral' }],
-  allergies: [],
-  immunizations: [],
+  allergies: [{ id: 'a1', substance: 'Penicillin', reaction: 'Hives', severity: 'moderate' }],
+  immunizations: [{ id: 'i1', name: 'Influenza', date: '2023-10-15' }],
   labResults: [{ id: 'l1', name: 'HbA1c', value: '6.5', unit: '%', interpretation: null, timestamp: '2021-06-01' }],
 };
 
@@ -37,8 +37,12 @@ describe('Results', () => {
   it('shows explicit "not available" states for sparse sections instead of hiding or erroring', async () => {
     const sparseRecord: NormalizedPatientRecord = {
       ...populatedRecord,
+      providers: [],
+      conditions: [],
+      medications: [],
       allergies: [],
       immunizations: [],
+      labResults: [],
       organizations: [],
     };
     vi.spyOn(apiClient, 'fetchRecords').mockResolvedValue({ status: 'CACHED', record: sparseRecord });
@@ -46,8 +50,12 @@ describe('Results', () => {
     render(<Results patientId="test-007" />);
 
     await waitFor(() => expect(screen.getByText('Hart Fallon')).toBeInTheDocument());
+    expect(screen.getByText(/No provider information available/i)).toBeInTheDocument();
+    expect(screen.getByText(/No condition information available/i)).toBeInTheDocument();
+    expect(screen.getByText(/No medication information available/i)).toBeInTheDocument();
     expect(screen.getByText(/No allergy information available/i)).toBeInTheDocument();
     expect(screen.getByText(/No immunization information available/i)).toBeInTheDocument();
+    expect(screen.getByText(/No lab result information available/i)).toBeInTheDocument();
   });
 
   it('shows ProgressState and does not crash when the backend returns LIVE_STARTED', async () => {
