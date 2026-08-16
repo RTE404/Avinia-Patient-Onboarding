@@ -105,6 +105,33 @@ describe('fromFhir', () => {
     expect(result.labResults[0].value).toBe('6.5');
   });
 
+  it('treats a searchset Bundle with no entry property at all as empty, not an error', () => {
+    // A FHIR searchset Bundle representing "no results" omits `entry`
+    // entirely rather than sending an empty array — standard, expected
+    // behaviour, and the normal case for the BRONZE (FHIR) patients whose
+    // networks return nothing.
+    const empty: FhirBundle = { resourceType: 'Bundle', type: 'searchset', total: 0 };
+
+    const result = fromFhir('ppid-bronze-3', empty);
+
+    expect(result.patientId).toBe('ppid-bronze-3');
+    expect(result.sourceFormat).toBe('FHIR');
+    expect(result.demographics).toEqual({
+      givenName: '',
+      familyName: '',
+      gender: null,
+      dateOfBirth: null,
+    });
+    expect(result.providers).toEqual([]);
+    expect(result.organizations).toEqual([]);
+    expect(result.encounters).toEqual([]);
+    expect(result.conditions).toEqual([]);
+    expect(result.medications).toEqual([]);
+    expect(result.allergies).toEqual([]);
+    expect(result.immunizations).toEqual([]);
+    expect(result.labResults).toEqual([]);
+  });
+
   it('treats a Bundle with no clinical resources as valid input, not an error', () => {
     const b = bundle([
       { resourceType: 'Patient', id: 'pat-2', name: [{ given: ['Tuma'], family: 'Nephro' }], gender: 'female' },

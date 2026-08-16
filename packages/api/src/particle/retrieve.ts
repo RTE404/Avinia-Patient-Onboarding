@@ -15,7 +15,10 @@ export interface FhirBundle {
   resourceType: 'Bundle';
   type: string;
   total: number;
-  entry: Array<{ fullUrl: string; resource: FhirResource }>;
+  // Optional on purpose: a searchset Bundle with no results omits `entry`
+  // entirely rather than sending an empty array, so every reader has to cope
+  // with it being absent.
+  entry?: Array<{ fullUrl: string; resource: FhirResource }>;
 }
 
 async function authorizedGet<T>(url: string, fetchImpl: typeof fetch): Promise<T> {

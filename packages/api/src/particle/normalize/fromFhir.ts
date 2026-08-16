@@ -2,7 +2,10 @@ import type { NormalizedPatientRecord } from '@onboarding/shared';
 import type { FhirBundle, FhirResource } from '../retrieve.js';
 
 function resourcesOfType(bundle: FhirBundle, type: string): FhirResource[] {
-  return bundle.entry.map((e) => e.resource).filter((r) => r.resourceType === type);
+  // `entry` is absent (not empty) on a searchset Bundle with no results, which
+  // is the normal "this patient's networks returned nothing" response — sparse
+  // data is not an error.
+  return (bundle.entry ?? []).map((e) => e.resource).filter((r) => r.resourceType === type);
 }
 
 function codingDisplay(codeableConcept: any): string | null {
