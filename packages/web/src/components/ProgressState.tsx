@@ -14,21 +14,33 @@ export function ProgressState({
 
   useEffect(() => {
     let cancelled = false;
-    const interval = setInterval(async () => {
+    let timer: ReturnType<typeof setTimeout>;
+
+    // Self-rescheduling setTimeout rather than setInterval: the next poll is
+    // only scheduled after the current one resolves and is confirmed
+    // non-terminal. A fixed-cadence setInterval would keep firing on its own
+    // schedule even while a poll's async response is still pending — racing
+    // ahead of clearInterval() and (in a slow-response or fast-fake-timer
+    // scenario) issuing an extra poll after the job has already completed.
+    async function tick() {
       const job = await pollJob(jobId);
       if (cancelled) return;
       setStatus(job);
       if (job.state === 'COMPLETE') {
-        clearInterval(interval);
         onComplete(job.record);
+        return;
       }
       if (job.state === 'ERROR') {
-        clearInterval(interval);
+        return;
       }
-    }, pollIntervalMs);
+      timer = setTimeout(tick, pollIntervalMs);
+    }
+
+    timer = setTimeout(tick, pollIntervalMs);
+
     return () => {
       cancelled = true;
-      clearInterval(interval);
+      clearTimeout(timer);
     };
   }, [jobId, pollIntervalMs, onComplete]);
 
